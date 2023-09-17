@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588e228931267984287d602d90af4499, type: 3}
+  m_Name: 0011 Human Archer 002
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Minion Spawns/0005 Human Archer
+    002.asset
+  newName: 0011 Human Archer 002
+  creature: {fileID: 11400000, guid: 01e4d3a1b96174642a1067a88fff71a1, type: 2}
+  delay: 5
+  maxAlive: 4

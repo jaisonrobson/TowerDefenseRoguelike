@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4798deac1424dc48ace4277a5912d68, type: 3}
+  m_Name: 0025 Healblock 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  status: {fileID: 11400000, guid: b29d211f67c36214fa0b339605ceb9c9, type: 2}
+  animation: {fileID: 11400000, guid: cde544cd8f53f7948b41810ab7d46309, type: 2}
+  sound: {fileID: 11400000, guid: bf926be0bf1de174695ed44ec5e46c96, type: 2}
+  prefab: {fileID: 5290895672473496060, guid: 90a35b11a5cf2d443a9855f95f9f8bb5, type: 3}
+  duration: 30
+  damage: 0
+  turnsQuantity: 1
+  influence: 0
+  specialCondition: 0

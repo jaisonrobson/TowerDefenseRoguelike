@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fea5b699d39684abdcc96e9aa0c498, type: 3}
+  m_Name: 0050 Arrow 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  type: 1
+  prefab: {fileID: 3141446317808175434, guid: d1e7e630ea76ec44cbadc5e77de323a0, type: 3}
+  outcomePrefab: {fileID: 0}
+  nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
+  formula: {fileID: 11400000, guid: bf3756c18a6b9fd478d9c0a2fb7ea0ec, type: 2}
+  cooldown: 3
+  influenceOverAttackVelocity: 70
+  minimumAttackDistance: 5
+  maximumAttackDistance: 25
+  onHitProbabilityStatusAffectors: []
+  selfProbabilityStatusAffectors: []
+  initialAnimation: {fileID: 11400000, guid: b4818579315a98143861fe61437f4a54, type: 2}
+  trailAnimation: {fileID: 0}
+  finalAnimation: {fileID: 11400000, guid: a1c501e7305ffdb4ca15c0d5fec510a9, type: 2}
+  initialSound: {fileID: 11400000, guid: 4ce28a4750fa0b749b77f42089c02084, type: 2}
+  trailSound: {fileID: 0}
+  finalSound: {fileID: 11400000, guid: c3afec582b2c7004997190d51b38b758, type: 2}

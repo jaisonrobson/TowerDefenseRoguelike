@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8b1f304fbfa924aba5da5035d07353, type: 3}
+  m_Name: 0150 Alignment 002 Opponents 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Alignment Opponents/0002 Alignment
+    002 Opponents 001.asset
+  newName: 0150 Alignment 002 Opponents 001
+  alignment: {fileID: 11400000, guid: f0c47d80a9552f344b6d14061c69bbc2, type: 2}
+  opponents:
+  - {fileID: 11400000, guid: 42320215e4f4f594995739e465c3bee5, type: 2}

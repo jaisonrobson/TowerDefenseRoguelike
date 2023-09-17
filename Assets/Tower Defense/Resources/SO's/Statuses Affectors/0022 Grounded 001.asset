@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4798deac1424dc48ace4277a5912d68, type: 3}
+  m_Name: 0022 Grounded 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Statuses Affectors/0022 Asleep 001.asset
+  newName: 0022 Grounded 001
+  status: {fileID: 11400000, guid: 28036fc31fc4bd24b9a44ca6ea5a73cf, type: 2}
+  animation: {fileID: 11400000, guid: 7c5fec574ce0c644097bb23990ede935, type: 2}
+  sound: {fileID: 11400000, guid: 4186f0e8c4ae41b43b673019458c9257, type: 2}
+  prefab: {fileID: 944951227541892520, guid: 712955f3c8f5a7341a6a8e8af1122ac3, type: 3}
+  duration: 15
+  damage: 0
+  turnsQuantity: 1
+  influence: 0
+  specialCondition: 0

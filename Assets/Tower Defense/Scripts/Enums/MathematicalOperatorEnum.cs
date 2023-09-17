@@ -1,0 +1,14 @@
+public enum MathematicalOperatorEnum
+{
+    ADD,
+    SUBTRACT,
+    MULTIPLY,
+    DIVIDE,
+    EXPONENTIAL,
+    LOGARITHM
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////SCRIPT MADE BY JAISON ROBSON GUSAVA UNDER MIT LICENSE///////////////
+/////////////////////// https://github.com/jaisonrobson/ ///////////////////////

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PA_STANDARD
+  - PA_AGENT_CREATURE
+  - PA_AGENT_STRUCTURE
+  - PA_UI_SLIDER
+  - PA_UI_FLOATTEXT
+  - PA_ATTACK_RANGED
+  - PA_ATTACK_MELEE
+  - PA_ATTACK_IMMEDIATE
+  - PA_ATTACK_OUTCOME
+  - PA_STATUS_AFFECTOR_FREEZE
+  - PA_STATUS_AFFECTOR_BURN
+  - PA_STATUS_AFFECTOR_PARALYZE
+  - PA_STATUS_AFFECTOR_DROWN
+  - PA_STATUS_AFFECTOR_CONFUSION
+  - PA_STATUS_AFFECTOR_POISON
+  - PA_STATUS_AFFECTOR_ASLEEP
+  - PA_STATUS_AFFECTOR_GROUNDED
+  - PA_STATUS_AFFECTOR_HEALBLOCK
+  - PA_STATUS_AFFECTOR_TAUNT
+  - PA_AFX_ATTACKING
+  - PA_SFX_CREATURES
+  - PA_SFX_STRUCTURES
+  - PA_SFX_MISCELANOUS
+  - PA_AFX_MISCELANOUS
+  - Panel_Confirmation
+  - ClingPoint
+  - PA_UI_BUTTON
+  - PA_UI_HORIZONTALLAYOUT
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Structure
+  - StructureSpawnCollider
+  - StructurePlacementArea
+  - Obstacle
+  - Attack
+  - Creature
+  - AgentEnemyDetectionCollider
+  - Highlighting
+  - DestroyItDebris
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ea029655f0e0345a19634775996ce0, type: 3}
+  m_Name: 0272 Paralyze 003
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  prefab: {fileID: 1055724211907020900, guid: cc5e394215762474aa4a1444941f77bf, type: 3}
+  fmodEvent:
+    Guid:
+      Data1: -635960959
+      Data2: 1216754142
+      Data3: 557477007
+      Data4: -798349090
+    Path: event:/SFX/Electric/Paralyze 003
+  loop: 0
+  delay: 0
+  volume: 1
+  priority: 128
+  pitchVariation: 0
+  chainedSound: {fileID: 0}

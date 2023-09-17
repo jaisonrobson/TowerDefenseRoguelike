@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ea029655f0e0345a19634775996ce0, type: 3}
+  m_Name: 0280 Bubble 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Sounds/0280 Bubble (Burst) 001.asset
+  newName: 0280 Bubble 001
+  prefab: {fileID: 1055724211907020900, guid: 227f56963718d2345a308871b6222331, type: 3}
+  fmodEvent:
+    Guid:
+      Data1: -2119356486
+      Data2: 1157607239
+      Data3: 1853786019
+      Data4: 296364763
+    Path: event:/SFX/Water/Bubble 001
+  loop: 0
+  delay: 0
+  volume: 1
+  priority: 128
+  pitchVariation: 0
+  chainedSound: {fileID: 0}

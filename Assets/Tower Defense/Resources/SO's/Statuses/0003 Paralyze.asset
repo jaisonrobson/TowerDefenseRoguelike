@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88871b38bfe5424b92f0d44f6372b0c, type: 3}
+  m_Name: 0003 Paralyze
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Statuses/0003 Burn.asset
+  newName: 0003 Paralyze
+  image: {fileID: 21300000, guid: 434621b57e2e4484fb05be8d8cc40e55, type: 3}
+  status: 2
+  nature: {fileID: 11400000, guid: e62b8c95fe0d0984f80c896d0c52d39f, type: 2}
+  description: Inflict damage and paralyzes the target

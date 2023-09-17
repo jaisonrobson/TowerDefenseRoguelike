@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ea029655f0e0345a19634775996ce0, type: 3}
+  m_Name: 0330 Healblock 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  prefab: {fileID: 1055724211907020900, guid: 8e89da0436f0ce64d96f9763be9cd9d1, type: 3}
+  fmodEvent:
+    Guid:
+      Data1: -2002990744
+      Data2: 1169498595
+      Data3: -1428171623
+      Data4: -587393174
+    Path: event:/SFX/Psychic/Healblock 001
+  loop: 0
+  delay: 0
+  volume: 1
+  priority: 128
+  pitchVariation: 0
+  chainedSound: {fileID: 0}

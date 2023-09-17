@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4798deac1424dc48ace4277a5912d68, type: 3}
+  m_Name: 0010 Drown 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Statuses Affectors/0011 Drown 001.asset
+  newName: 0010 Drown 001
+  status: {fileID: 11400000, guid: 963fa61a51f97c4409276a171a01395e, type: 2}
+  animation: {fileID: 11400000, guid: 63e3a315d714dde4090d5fb5974d0ddc, type: 2}
+  sound: {fileID: 11400000, guid: b5f58b3a303e1b140abd0dde8b13a174, type: 2}
+  prefab: {fileID: 1585844518477266093, guid: dcb9d5d35652ba34aa90ff8abe4677fd, type: 3}
+  duration: 10
+  damage: 15
+  turnsQuantity: 3
+  influence: 0
+  specialCondition: 0

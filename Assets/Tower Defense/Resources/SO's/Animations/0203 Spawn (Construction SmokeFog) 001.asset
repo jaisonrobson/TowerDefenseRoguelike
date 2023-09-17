@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894155612317ce249b2ea387a31e159e, type: 3}
+  m_Name: 0203 Spawn (Construction SmokeFog) 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Animations/0203 Spawn (Construction
+    SmokeFog).asset
+  newName: 0203 Spawn (Construction SmokeFog) 001
+  prefab: {fileID: 566530236171318786, guid: b9cf542b5f60e384aae5654547f878ea, type: 3}
+  delay: 0
+  delayBeforeChainedAnimation: 0
+  chainedAnimation: {fileID: 0}

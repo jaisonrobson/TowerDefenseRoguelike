@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621e2c2408ddc7e4cb63361f2999f0cd, type: 3}
+  m_Name: 0003 Team 03 Materials
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  alignment: {fileID: 11400000, guid: 79f57b8bde3323e48b0e4d0723e0eab8, type: 2}
+  ghost_structures: {fileID: 2100000, guid: 5e2961dea9e40d042ad7964f660dead8, type: 2}
+  area_highlighting: {fileID: 2100000, guid: bf8a1919069f25f46be31449170f2004, type: 2}

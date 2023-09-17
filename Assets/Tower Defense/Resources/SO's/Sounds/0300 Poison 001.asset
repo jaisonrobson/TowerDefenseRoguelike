@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ea029655f0e0345a19634775996ce0, type: 3}
+  m_Name: 0300 Poison 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Sounds/0300 Poison (Burst) 001.asset
+  newName: 0300 Poison 001
+  prefab: {fileID: 1055724211907020900, guid: 74ff107ffd2e29c47a37111780b24334, type: 3}
+  fmodEvent:
+    Guid:
+      Data1: -361293438
+      Data2: 1269813528
+      Data3: 225604285
+      Data4: -303072114
+    Path: event:/SFX/Poison/Poison 001
+  loop: 0
+  delay: 0
+  volume: 1
+  priority: 128
+  pitchVariation: 0
+  chainedSound: {fileID: 0}

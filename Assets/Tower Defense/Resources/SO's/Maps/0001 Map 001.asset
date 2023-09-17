@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93137d86cf8114b44bb7e8652b327987, type: 3}
+  m_Name: 0001 Map 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 4e2c305a491d0a242a43a2bf3f220424, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: alignedWaves
+      Entry: 7
+      Data: 0|AlignedWaveSO[][], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|AlignedWaveSO[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  name: Map 01
+  sceneName: Map_001
+  description: The first map of the campaign
+  playerAlignment: {fileID: 11400000, guid: 42320215e4f4f594995739e465c3bee5, type: 2}
+  playerInitialPoints: 100
+  playableAgents:
+  - {fileID: 11400000, guid: 5ee3415883f95844a86bbd74306d8aa8, type: 2}
+  - {fileID: 11400000, guid: 70a9899fa8622bd4e957eb46d9e5ba63, type: 2}
+  playerEntities:
+  - {fileID: 11400000, guid: 27eb9add85952394496d57f31ead99d3, type: 2}
+  - {fileID: 11400000, guid: 1ba756df7dd6c4f489cc6289caff8286, type: 2}
+  - {fileID: 11400000, guid: 5fcc1f3f6c2f3374eb7a8482bf234475, type: 2}
+  alignmentsOpponents:
+  - {fileID: 11400000, guid: 0e65c97e59b1b404bb4fcecc8db6c25f, type: 2}
+  - {fileID: 11400000, guid: 56ed35ab0e12bb342990a80fb88e998f, type: 2}
+  weaknesses: {fileID: 11400000, guid: abc87d597315edc45a703ccc429e9e0f, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2af8432f0d6fc4cbbbbcbc4d0e1ed9, type: 3}
+  m_Name: 0004 Alignment 004 Wave 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Aligned Waves/0004 Alignment 004
+    Wave 002.asset
+  newName: 0004 Alignment 004 Wave 001
+  alignment: {fileID: 11400000, guid: 4c9eefaf4f857a246b53e1191571be01, type: 2}
+  wave: {fileID: 11400000, guid: 1882a681e97c88d4194572034c521a3b, type: 2}

@@ -1,0 +1,1766 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e8432c9ff99c644bce16ff9ced4d66, type: 3}
+  m_Name: 0001 Weaknesses
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
+    - {fileID: 11400000, guid: 76568625740f3204f8c654520fc672c8, type: 2}
+    - {fileID: 11400000, guid: 4dcf979a42cef744d81a9044d8c959bd, type: 2}
+    - {fileID: 11400000, guid: 63c5492951dc42245a47f2ea4c7b0c4b, type: 2}
+    - {fileID: 11400000, guid: e62b8c95fe0d0984f80c896d0c52d39f, type: 2}
+    - {fileID: 11400000, guid: 6b479c02e71568a45a6ccc528a643ad1, type: 2}
+    - {fileID: 11400000, guid: aadaddfe28214d74c89f36e386c3ffde, type: 2}
+    - {fileID: 11400000, guid: ca774d1638191f64c8b3250e09a5f227, type: 2}
+    - {fileID: 11400000, guid: d6f2c68c2506ed54d9496d591ad666db, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: weaknessMatrix
+      Entry: 7
+      Data: 0|System.Single[,], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 81
+    - Name: ranks
+      Entry: 1
+      Data: 9|9
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: naturesMatrix
+      Entry: 7
+      Data: 1|InvokerToTargetNature[,], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 81
+    - Name: ranks
+      Entry: 1
+      Data: 9|9
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: xIndex
+      Entry: 3
+      Data: 0
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 1
+    - Name: xIndex
+      Entry: 3
+      Data: 1
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 2
+    - Name: xIndex
+      Entry: 3
+      Data: 2
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 3
+    - Name: xIndex
+      Entry: 3
+      Data: 3
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 4
+    - Name: xIndex
+      Entry: 3
+      Data: 4
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 5
+    - Name: xIndex
+      Entry: 3
+      Data: 5
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 6
+    - Name: xIndex
+      Entry: 3
+      Data: 6
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 7
+    - Name: xIndex
+      Entry: 3
+      Data: 7
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 0
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 1
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 2
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 3
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 4
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 5
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 6
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 7
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: InvokerToTargetNature, Assembly-CSharp
+    - Name: invoker
+      Entry: 10
+      Data: 8
+    - Name: target
+      Entry: 10
+      Data: 8
+    - Name: xIndex
+      Entry: 3
+      Data: 8
+    - Name: yIndex
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Weaknesses/0001 WeaknessesX.asset
+  newName: 0001 Weaknesses

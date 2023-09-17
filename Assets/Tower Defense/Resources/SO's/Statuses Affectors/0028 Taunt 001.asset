@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4798deac1424dc48ace4277a5912d68, type: 3}
+  m_Name: 0028 Taunt 001
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  status: {fileID: 11400000, guid: 04cba29bc8f494e499d2578afcbbc9bc, type: 2}
+  animation: {fileID: 11400000, guid: 6965e3e0dfc34d048a57430bc88d3434, type: 2}
+  sound: {fileID: 11400000, guid: 703869c7936d4d6418314d4619be1a81, type: 2}
+  prefab: {fileID: 3280419576543477615, guid: 844c2fbb88057c44f9d7907fe7623b0f, type: 3}
+  duration: 15
+  damage: 0
+  turnsQuantity: 1
+  influence: 0
+  specialCondition: 0

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fea5b699d39684abdcc96e9aa0c498, type: 3}
+  m_Name: 0201 Energy Discharge 002
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  jokerHiddenTitleField: 
+  assetPath: 
+  newName: 
+  type: 1
+  prefab: {fileID: 3141446317808175434, guid: d1e7e630ea76ec44cbadc5e77de323a0, type: 3}
+  outcomePrefab: {fileID: 0}
+  nature: {fileID: 11400000, guid: e62b8c95fe0d0984f80c896d0c52d39f, type: 2}
+  formula: {fileID: 11400000, guid: bf3756c18a6b9fd478d9c0a2fb7ea0ec, type: 2}
+  cooldown: 2
+  influenceOverAttackVelocity: 100
+  minimumAttackDistance: 0
+  maximumAttackDistance: 50
+  onHitProbabilityStatusAffectors: []
+  selfProbabilityStatusAffectors: []
+  initialAnimation: {fileID: 11400000, guid: 1a000aa1546f02045ae724e76b7daba7, type: 2}
+  trailAnimation: {fileID: 11400000, guid: e15e237fc670a4a4a985efcfc39ab20e, type: 2}
+  finalAnimation: {fileID: 11400000, guid: 1a000aa1546f02045ae724e76b7daba7, type: 2}
+  initialSound: {fileID: 11400000, guid: a08d09a86ae39ce4faa82290c2d9006f, type: 2}
+  trailSound: {fileID: 11400000, guid: ca82c7cef34698644827d565d0a46be0, type: 2}
+  finalSound: {fileID: 11400000, guid: c49991a1ec6057c46b92ef5142e800a6, type: 2}
