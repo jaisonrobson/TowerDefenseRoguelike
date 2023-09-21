@@ -30,6 +30,7 @@ LEGENDA:
 ( ) As estruturas principais demarcaram a condição de derrota (caso ele perda o heroi, o jogo acaba)
 ( ) Os spawns dos inimigos sera feito de forma aleatoria ao redor do mapa (literalmente em qualquer regiao em volta do jogador, com certa distancia de demarcação limite do jogador.)
 ( ) Havera um fog of war em volta de uma area predefinida que sera relevado apos um certo numero de waves. 
+( ) depois que o último inimigo da wave morrer, o jogador vai escolher a recompensa. Aí sim a wave acaba e começa outra
 ( ) A fog sera limitado a 3 areas de fog of war por Run.
 ( ) Ao descobrir uma fog, a quantidade de monstros spawnados sera sempre cada vez maior e mais forte
 ( ) O heroi possuira habilidades ativas, que poderao ser usadas em tempo real, para atacar os inimigos.

@@ -1,9 +1,7 @@
 public enum AgentSubTypeEnum
 {
     NONE,
-    CATALYST,
-    GENERATOR,
-    SOURCE
+    HERO
 }
 
 ////////////////////////////////////////////////////////////////////////////////
