@@ -5,336 +5,41 @@ LEGENDA:
 (X) = Esta totalmente pronto ate o que foi planejado
 (-) = Foi implementado uma ideia que ao testar na pratica nao funcionou
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-(X) Criar um sistema de movimento da camera. (visao do jogador)
-(X) Criar o sistema de alinhamentos (para definir unidades aliadas e inimigas).
-(X) Fazer uma cor especifica fixa para cada alinhamento
-(X) Criar um sistema de posicionamento de torres na area jogavel.
-(X) Criar o sistema de respawn de wave.
-(X) Criar o script SpawnManager para manter um alinhamento e usa-lo no wave manager.
-(X) Verificar se possui Spawn Points para o alinhamento X, caso nao exista, verificar se existe Spawn Points Genericos, caso estes nao existam anunciar um erro. (FAZER UMA VALIDACAO NA INPUT PARA ISSO)
-(X) Caso existam Spawn points do alinhamento X, agrupa-los em uma nova lista local e selecionar um aleatorio desta nova lista para spawnar.
-(X) Caso existam Spawn points apenas do alinhamento Generico, agrupa-los em uma nova lista local e selecionar um aleatorio desta nova lista para spawnar.
-(X) Criar a funcao de caminhada dos agentes ate o objetivo.
-(X) * Fazer a area de reconhecimento dos inimigos do agente (trigger)
-(X) * Fazer com que o minion encontrado no caminho se torne a prioridade atual
-(X) * Fazer com que o script de percorrer a prioridade persiga apenas os minions e torres de alinhamentos inimigos.
-(X) * Fazer com que novas estruturas e agentes sejam calculados de tempos em tempos na rede de grafos do pathfinding. (Structures, Towers, Minions)
-(-) Enquanto estiver no estado de caminhada, fazer um codigo que vai verificar se a ultima posicao conhecida do transform foi a mesma durante os ultimos 5 segundos, caso seja, vai aumentar o tamanho da tolerancia da distancia necessaria para chegar ao objetivo.
-(-) Fazer com que ao minion chegar na distancia desejada do seu objetivo, desabilite o seu proprio pathfinding enquanto esta realizando outras funcoes (atacando) 
-(-) Fazer com que ao ter seu pathfinding desabilitado, o minion deve habilitar um script de obstaculo, onde sera considerado com obstaculo pelo pathfinding. (vai ajudar com os minions se perdendo na multidao)
-(X) Fazer um script novo para agentes (minions e torres) que vai possuir toda a parte reutilizavel dos agentes. (vida, alinhamento, velocidade, tudo o que se repete para todos os agentes.)
-(X) Criar um enumerator para saber o evento que esta ocorrendo no agente atualmente. (caminhando, atacando, morrendo, etc.) obs: utilizar esse enumerator para fazer as duas tasks do pathfinding sobre obstaculo.
-(X) Fazer com que os scripts das torres e minions herdem do script de agentes.
-(X) Criar a funcao de ataque dos agentes a alguma entidade inimiga proxima.
 
-(X) Criar sistema de AI de Finite State Machine
-(X) Fazer o estado Idle para criaturas
-(X) Fazer o estado Walk para criaturas
-(X) Fazer o estado Attack para criaturas
-(X) Fazer o estado Die para criaturas
-(X) Fazer o estado Idle para estruturas
-(X) Fazer o estado Attack para estruturas
-(X) Fazer o estado Die para estruturas
-(X) Criar um metodo no agent FSM ai para verificar dentre todos os ataques, se algum esta dentro do alcance com o inimigo.
-(X) Fazer com que o codigo do agent FSM ai sempre ataque o inimigo mais proximo.
-(X) Implementar o attack range no FSM Ai dos agentes
-(X) Implementar o minimum attack distance no FSM Ai dos agentes
-(-) Modificar o sistema de FSM dos agentes para que todo agente possa se mover e atacar, e para verificar quais agentes nao podem realizar essas devidas acoes, atentar-se ao atributo "IsMovable" para movimento e "IsAgressive" para ataque. (estruturas nao vao poder se mover.)
-(X) Implementar a variavel "IsMovable" em cima do algoritmo de movimentação para não haver movimentação quando o agente não for "movel".
-(X) Caso o ataque esteja fora de alcance, e nao tenha mais nenhum ataque possivel (range ou cooldown) no momento, fazer com que o FSM mude de estado para Walk afim de atingir a distancia desejada ao objetivo. (testar a IA do FSM com inimigos que possuem ataques a distancia, ex: arqueiros)
-(X) Criar um animator para as estruturas
-(X) Criar os FSMAI e states para Playable Structures pois estes devem verificar quando a estrutura esta posicionada antes de iniciar os estados
-(X) Criar a funcao de ataque das torres. (Função de ataque das estruturas)
-
-(X) Fazer com que os ataques causem dano e eliminem seus alvos (agentes/minions/torres)
-(X) Fazer o sistema de calculo de formulas nao apenas para ataques, mas para tudo que tiver uma formula.
-(X) Melhorar o script de formulas com insercoes automaticas entre as listas.
-(X) Criar uma nova propriedade nos agentes chamada "evade/evasion" que servira para definir se o minion devera ignorar o seu inimigo atraves de uma chance aleatoria definida de 0 a 100% na propriedade. usar rng para definir essa chance.
-(X) Fazer com que os minions ignorem a batalha com seus inimigos de prioridade baixa de acordo com uma chance declarada como "evasion" no AgentSO.
-(X) Fazer a interface de barras de vida para os agentes (Fazer um script separado do agente para controle de UI)
-(-) Criar um sistema de pooling no pool manager, para armazenar todos os tipos de interface world space, inclusive os floating values.
-(X) Entender o funcionamento do pool manager importado da Unity TDT (abrir o projeto da unity para ver como e utilizado nos assets)
-(X) Integrar os agentes com o pool manager
-(X) Integrar os valores flutuantes com o pool manager
-(X) Integrar os sliders com o pool manager
-(X) Fazer com que o agente volte ao PoolManager ao morrer
-(X) Fazer um metodo generico de reset para cada Poolable individual dentro de Poolable/Pool pois existe um problema ao agente Torre morrer e voltar para o Pool Manager, o PM nao esta resetando corretamente o funcionamento da torre.
-(X) Fazer com que o sistema de prioridades e objetivos enxergue os scripts dos "agents" ao inves de gameobjects. (isso corrigira o problema de remover prioridades dos agentes desabilitados subitamente)
-(X) Corrigir o bug ao destruir qualquer objetivo principal.
-(X) Fazer com que o dano apareca na interface de forma efemera (Floating value)
-(X) Fazer as animacoes das estruturas nao jogaveis
-(X) Verificar se as estruturas nao jogaveis estao atacando e morrendo adequadamente
-
-(X) Refatorar o enum AgentType de (MINION, TOWER) para (CREATURE, STRUCTURE)
-(X) Criar um novo enum com duas opcoes (FIXED, MOVABLE) que servira para identificar se o agente pode se mover ou nao
-(X) Renomear o MinionSpawnSO para SubSpawnSO.
-
-(-) Fazer com que as areas de posicionamento de torres tenham uma apresentacao mais sutil no plano 3d ( dimensoes X e Z apenas).
-(X) Fazer com que as areas de posicionamento de torres fiquem invisiveis e so aparecam ao tentar posicionar uma torre.
-(X) Pesquisar como usar cursores customizados dentro do jogo
-(X) Criar um sistema de seleção de torre e possivelmente agentes na interface, com a possibilidade do jogador selecionar o ponto de interesse dos minions que nascem da torre. (Verificar aquele asset sobre selecao de agentes, obs: nao fica legal no tower defense.)
-(X) Fazer com que ao selecionar a torre, sua area de visibilidade total seja exibida no plano 3d ( nas dimensoes X e Z apenas )
-(X) Fazer o funcionamento do ponto de interesse da torre/estrutura fixa.
-(X) Fazer com que os botoes da interface nao aparecam fora de contexto (criaturas e estruturas nao jogaveis, nao devem possuir flag, por exemplo.)
-
-(X) Criar a funcao de spawn de minions das torres (possivelmente os subspawns poderao ser feitos nos minions tambem, por exemplo: um necromante invocando esqueletos como subspawn.)
-(X) Continuar a criacao do FSM State de morte, onde exibira uma animacao de morte, e depois de esperar a animacao fazer o pool do agente. ao inves da forma como esta hoje.
-(X) Criar um sistema de delimitação da area dos minions em relação as torres. (Ate onde o minions podem caminhar para defender sua torre.) (definido pelo limite da area da torre + metade do limite da area do minion)
-(X) Remover os pririty goals dos subspawns ao fugirem muito longe da area limite dos subspawns
-(X) Fazer um algoritmo para teletransportar o agente movel caso o mesmo se afaste da area de seu mestre.
-
-(X) Criar o sistema de evolução das torres (e seus minions spawnados.)
-(X) Criar um algoritmo singleton que fara o controle de evolucao de torres descritos nos passos de afazeres abaixo (Structure Evolution Manager / Controller)
-(X) Armazenar a posicao da torre
-(X) Armazenar as posições dos agentes subspawns invocados pela torre
-(X) Armazenar a posição da bandeira da torre
-(X) Armazenar a quantidade de vida restante da torre em forma de porcentagem
-(X) Repoolar a torre e seus subspawns
-(X) Poolar/Criar uma nova torre de nivel maior no lugar armazenado da primeira
-(-) Spawnar seus subspawns de acordo com a quantidade e posicionamento anteriormente armazenados
-(X) Alterar a posicao da bandeira para ser a mesma da torre anterior
-(X) Alterar a quantidade de vida da torre baseado na porcentagem no valor float que foi amazenado anteriormente da outra torre
-(X) Criar um attribute drawer para a progress bar com odin que exibira tambem os campos para setar o valor diretamente, similar ao atributo [Range] mas com progress bar.
-
-(X) Criar um script responsavel por realizar o ataque meelee de acordo com um colisor de trigger numa area pre-determinada de acordo com uma nova variavel de AttackSO (radius). (AttackAffector ou AttackEnemyCollider = Manager / Controller) esse script deve essencialmente existir apenas durante o ataque, e so ira afetar os agentes (uma vez durante sua existencia) que ainda nao tiverem entrado em algum tipo de lista. quando o ataque terminar ou for poolado, resetar a lista de agentes atacados.
-(X) Verificar se vai ser possivel usar o script acima tanto para os ataques a distancia (projectile) quanto para os em area (AOE)
-
-(X) Criar o funcionamento de ataques com projeteis (Criaturas e estruturas)
-(X) Criar uma seção de codigo no agente que sera responsavel por armazenar informações sobre o ataque (posição em que o projetil será lançado e posição em que a animação de ataque inicial irá ocorrer.)
-(X) Criar um script responsavel pelo movimento do projetil e o pooling (desaparecimento) da origem ate o destino. (RangedAttackControler)
-(X) Criar um script responsavel pela detecção de colisores de entidades/agentes inimigos ao alinhamento do projetil. (ProjectileEnemyDetectionColliderController)
-(X) Fazer com que o script de movimento va ate o ponto de destino (Vector3) que sera dado pela sua entidade invocadora (agente que disparou)
-(X) Ao atingir o ponto de destino, provavelmente o script nao tera encontrado um inimigo, reproduzir o efeito & o som & se auto destruir (Repoolar)
-(X) Caso o script encontre algum inimigo no caminho para o ponto de destino, deduzir o dano do AgentSO invocador calculado com o AttackSO realizado & reproduzir o efeito & som & se auto destruir (Repoolar)
-(X) Fazer com que os ataques a distancia nao causem dano em seu trajeto mas que ao encontrarem algum inimigo fisicamente, chamem outra funcao (Outcome ou Explode) que ira ativar um colisor na area em questao para entao verificar os inimigos dentro e causar os respectivos danos.
-(X) Tornar os projeteis poolaveis
-(-) Verificar a necessidade de repoolar projeteis caso seus agentes de origem ou destino nao existam mais
-(X) Fazer o reset das variaveis dos scripts de outcome quanto o ataque for poolado
-(X) Refatorar os scripts Outcome para obedecer o OutcomeAffector
-(X) Criar o funcionamento de ataques em area (AOE) (Criaturas e estruturas)
-(X) Fazer o funcionamento dos Immediate Attacks usando os scripts Affector para comportar futuramente o controle das animacoes e sons
-(X) Fazer com que todos os tipos de ataques (seja Immediate, Ranged, Melee) atinjam aos proprios alinhamentos caso o AGENTE esteja sobre o status de confusao/Confusion.
-
-(X) Criar o sistema de status (lento, queimando, paralizado, etc.) (Affectors) (verificar codigo do tower defense da unity, tem bons codigos sobre isso la)
-(X) Criar um enumerator de status para cada tipo de status possivel
-(X) Criar um novo Scriptable Object na base, para armazenar subtipos dos mesmos status com configuracoes diferentes, progressao de dano, etc. Que sera utilizado no script affector abaixo para regulagem e funcionamento do algoritmo.
-(X) Criar um script/algoritmo que sera desacoplado do agente e sera responsavel por controlar o tempo em que o status configurado no mesmo afetara o agente.
-(X) Fazer com que esse script obedeca os conceitos de OO, heranca, para reutilizar alguns funcionamentos e dados
-(X) Fazer varios subscripts herdados para cada tipo de status diferente.
-(X) Fazer com que o script acima tambem controle o proprio status configurado de acordo com um switch case, e afete de forma desacoplada o agente. (ex: caso seja lentidao, diminua a velocidade do agente atraves de metodos, etc.)
-(X) Caso o agente seja poolado, o script acima sera removido do objeto, mas antes de ser removido deve chamar seus metodos de "pooling".
-(X) Fazer os cenarios de status especificos para o Confusion & Drown (possivelmente tambem averiguar o paralyze)
-(X) Fazer o Freeze funcionar
-(X) Fazer o Burn funcionar
-(X) Fazer o Paralyze funcionar
-(X) Fazer o Drown funcionar
-(X) Fazer o Confusion funcionar
-(X) Fazer o Poison funcionar
-(X) Fazer o Asleep funcionar
-(X) Fazer o Grounded funcionar
-(X) Fazer o Healblock funcionar
-(X) Fazer o Taunt funcionar
-
-(X) Corrigir o calculo de devolução de velocidade e velocidade de ataque nos algoritmos de status Affector (criar uma variavel que vai retornar exatamente a quantia/valor a ser devolvida/o ao finalizar o status)
-(X) Fazer alguns variaveis de controle no script Agent.cs para que permita coordenar melhor se o mesmo podera se mexer e atacar, ser curado, etc. (IsMovementPrevented, IsAttackPrevented...)
-(X) Criar um determinador de chance no AttackSO para que CADA status da lista no AttackSO seja aplicado. (ou seja uma chance para que o status seja aplicado ao atacar.)
-(X) Criar os agentes imunes aos status (lista de imunidade) para cada agente no AgentSO.
-(X) Criar uma condicao na lista de imunidades (caso o agente seja uma STRUCTURE, remover a lista de imunidades, pois todas estruturas sao imunes automaticamente a status negativos).
-(X) Fazer com que as estruturas nao recebam nenhum status negativo.
-(X) Fazer com que os agentes que possuirem imunidades na lista, nao recebem os status especificos de acordo com as imunidades.
-
-(X) Fazer o funcionamento das animações em tudo no jogo.
-(X) Criar um script que sera responsavel por controlar quando a animacao vai iniciar (se na cfg do SO tem delay vai iniciar mais tarde, etc.)
-(X) Fazer com que o script tambem inicie (Poolar) outras animacoes que estiverem ENCADEADAS na configuracao do SO configurado.
-(X) Fazer com que a duracao da animacao (e todas as subanimacoes internas da hierarquia) durem o mesmo tempo que o ataque que as provocou.
-(X) Tornar todas as animacoes poolaveis
-(X) Fazer as animacoes para spawn de criaturas selvagens (wave creatures)
-(X) Fazer as animacoes para o spawn de torres posicionadas pelo jogador
-(X) Fazer as animacoes dos subspawns de criaturas advindas de torres
-(X) Fazer as animacoes de morte das torres
-(X) Fazer as animacoes de morte dos agentes criaturas
-(X) Fazer as animacoes de status affectors
-
-(X) Fazer com que o sistema de som use a tecnologia FMOD (se possivel integrar com o sistema de SO`s que ja existe)
-(X) Estudar o FMOD https://www.fmod.com/docs/2.02/unity/integration-tutorial.html
-(X) Fazer com que todos os Scriptable Objects do "Sound" tenham uma referencia (string) para o devido som no projeto do FMOD.
-(X) Criar um script estatico que sera responsavel por invocar os sons poolaveis
-(X) Criar um algoritmo que vai fazer cada som poolavel seguir o GameObject em questao ao que foi invocado (Invoker) (similar ao efeito de trail na animacao)
-(X) Criar o sistema de som
-(X) Tornar os sons poolaveis
-
-(X) Fazer/configurar agentes arqueiros (prefab) e testar
-(X) Testar criaturas com ataque a distancia
-(X) Fazer com que os agentes subspawns sempre fiquem a uma certa distancia predeterminada universal da flag da estrutura.
-(X) Corrigir bugs
-
-(X) Fazer com que apenas uma entidade possa ser selecionada por vez
-(X) Criar elementos da interface que mostrem as estatisticas das criaturas
-(X) Tornar possivel a remoção de estruturas ja posicionadas (criar interface para remocao de estrutura)
-(X) Caso nao haja mais evolucoes da estrutura, nao mostrar o botao evolutivo.
-(X) Ao evoluir uma estrutura, verificar se ha mais de uma opcao, caso haja, fazer com que uma janela centralizada com as opcoes disponiveis seja aberta (mostrando toda estatistica de cada opcao)
-(X) Adicionar a quantidade de subspawns na informacao de estatisticas do agente ao ser selecionado caso o agente seja uma estrutura
-(X) Fazer com que a vida dos agentes nao seja exibida enquanto estiver cheia.
-
-(X) Criar um game manager que seja responsavel por dizer quando o jogo iniciou e termninou, assim como controlar outros scripts de funcionamento do jogo quando o mesmo acaba ou comeca.
-(X) Criar um sistema de pontos que o jogador armazena durante a partida (Experiencia ou dinheiro, recursos, qualquer coisa que se encaixe melhor.)
-(X) Criar um algoritmo que controle a situacao do jogador e seus interesses de forma centralizada, se ele perdeu, qual a experiencia, dinheiro que ele possui.
-(X) Fazer com que o tempo de jogo seja exibido no topo da interface/tela
-(X) Fazer com que informacoes vitais de pontuacao sejam exibidas no topo da tela/interface
-
-(X) Fazer com que os agentes inimigos sejam promovidos automaticamente caso possuam informacoes no sistema de promocao. (Criar uma lista nova de auto promocao)
-(-) Fazer com que os agentes possuam obrigatoriamente uma animacao e um som de evolucao.
-
-( ) Fazer com que o algoritmo AnimationFX utilize a estrategia de inscricao de metodos nos metodos OnEnable e OnDisable quando a animacao for do tipo Trail, para que o mesmo seja atribuido como filho na hierarquia de objetos do objeto em questao que se esta sendo seguido.
-(-) Criar um algoritmo para as animacoes que vai tratar o tamanho da animacao no SO, se tamanho natural for maior que a escala do colisor, vai diminuir/dividir de forma equivalente, se o tamanho natural for menor, vai multiplicar/aumentar a escala da animacao.
-(-) Caso o algoritmo de escala de animacoes fique bom, fazer a medicao de todas as animacoes e configurar nos SOs.
-(-) Fazer com que as AnimationFX fiquem do tamanho do colisor principal do agente, ou sigam algum tipo de ponto de origem do agente. (No caso das torres que compartilham animacoes com agentes menores, precisam que as animacoes mudem de tamanho pois acabam ficando dentro da estrutura.)
-
-(X) Fazer com que ao tentar posicionar uma torre o custo/valor dela seja cobrado do jogador, caso jogador nao tenha os pontos necessarios, entao nao posicionar a torre.
-(X) Criar elementos de interface para controle de posicionamento das torres. (sera criado botoes dinamicamente para selecionar as torres do mapa especifico que esta sendo jogado).
-(X) Fazer com que ao selecionar uma torre, apareca na interface a torre que esta sendo posicionada. (uma especie de pre-selecao da estrutura)
-(X) Fazer com que as estatisticas da torre selecionada apareca numa regiao da tela enquanto o jogador estiver tentando posiciona-la.
-
-(X) Criar interface de configuracoes
-(X) Criar botao de saida da jogatina atual para o menu principal (com interface/botoes de confirmacao)
-(X) Criar botao para acesso a configuracoes de video
-(X) Criar botao para acesso a configuracoes de audio
-(X) Criar botao para acesso a creditos do jogo
-
-(X) Criar ou procurar um shader, que exiba a area de entorno da regiao da torre adequadamente em diferentes terrenos/elevações, tanto para o posicionamento quanto para a distancia de ataque.
 ( ) Procurar um shader para servir de dissolução dos destroços das estruturas e corpos dos agentes apos morrerem. (Dissolve Shader, Dithering.) ou verificar como a remoção/transição de meshes ocorre nos jogos.
 
-(X) Fazer com que o sistema Asset DestroyIT funcione com o sistema de pooling do projeto (ao receber dano o agente deve notificar o destroy it, ao poolar o agente, deve ser feito uma limpeza dos debris da morte da estrutura e revitalizar as variaveis do algoritmo DestroyIt dentro do objeto do agente.)
-(X) Verificar a necessidade de resetar o Damage Level do Destructible no agente apos ser repoolado para usar novamente.
-
 ( ) Criar um sistema de disponibilidade de evolucao de torres para o jogador de acordo com o mapa (ex: algumas torres nao estaram desbloqueadas para uso naquele mapa, nem por evolucao, ou evolucoes especificas).
-
-( ) Ajustar o tamanho de todas as texturas de todos os modelos ate o momento criados para 4096 4K
 
 (X) Ajustar uma area horizontal dirigida na interface world space de cada agente para exibir informacoes de status do agente
 ( ) Ajustar uma area horizontal dirigida na interface world space de cada agente para exibir informacoes de disponibilidade de recursos (evolução, etc.)
 
 
 --- Alterações de mecanica
-( ) Fazer um novo projeto e tornar o antigo um backup em um projeto separado antes de comecar a alterar as mecanicas.
-( ) Fazer com que o jogador esteja obrigatoriamente sempre no centro do mapa. (As entidades principais do jogador estarao no centro)
-( ) O jogo não sera mais em varios niveis/mapas, mas apenas um mapa onde o jogador tera que lidar com varios aspectos de rejogabilidade/roguelike/aleatoriedade/rng.
-( ) As estruturas do jogador principais serao tres, heroi, slot de torre 1, slot de torre 2. (Onde o jogador antes de entrar na run/mapa, podera escolher qual sera o heroi e tambem quais serao as torres).
+(X) Fazer um novo projeto e tornar o antigo um backup em um projeto separado antes de comecar a alterar as mecanicas.
+(X) Fazer com que o jogador esteja obrigatoriamente sempre no centro do mapa. (As entidades principais do jogador estarao no centro)
+(X) O jogo não sera mais em varios niveis/mapas, mas apenas um mapa onde o jogador tera que lidar com varios aspectos de rejogabilidade/roguelike/aleatoriedade/rng.
+(X) Alterar o mapa e a area jogavel para serem redondos/circulares.
+
+( ) Não havera mais areas de construção livre, mas sim pontos pre-definidos em todas as fogs, onde cada ponto sera possivel escolher a torre que ocupara o mesmo.
+(X) Fazer com que ao selecionar o ponto, uma interface com todas as torres possiveis de construcao, se abra. (essa interface deve informar o nome e algumas estatisticas de cada torre.)
+
+( ) Inicialmente so havera apenas o heroi no mapa que o jogador selecionou na tela de lobby.
+( ) Em cada fog havera 3 pontos de construção disponiveis que estaram geograficamente pre-definidos.
+( ) O spawn dos inimigos devera ocorrer no limite da area jogavel ate a onde as fogs foram descobertas, mas os monstros devem surgir obrigatoriamente de dentro da fog.
+
 ( ) As estruturas principais demarcaram a condição de derrota (caso ele perda o heroi, o jogo acaba)
 ( ) Os spawns dos inimigos sera feito de forma aleatoria ao redor do mapa (literalmente em qualquer regiao em volta do jogador, com certa distancia de demarcação limite do jogador.)
-( ) Sera possivel construir estruturas em volta da area principal, que servirão de forma secundaria para proteger o heroi/nucleo. (por exemplo: armadilhas, torres automatas inferiores.)
 ( ) Havera um fog of war em volta de uma area predefinida que sera relevado apos um certo numero de waves. 
 ( ) A fog sera limitado a 3 areas de fog of war por Run.
 ( ) Ao descobrir uma fog, a quantidade de monstros spawnados sera sempre cada vez maior e mais forte
 ( ) O heroi possuira habilidades ativas, que poderao ser usadas em tempo real, para atacar os inimigos.
 ( ) Cada heroi possuira habilidades diferentes.
 
----Blender
-( ) Criar as estruturas que o jogador vai usar para jogar.
-
-(X) Criar o nucleo do jogador
-( ) Criar o catalisador do jogador
-( ) Criar o gerador do jogador
-
-(X) Criar a torre de cavaleiro do jogador nivel 1
-(X) Remover quantidade de destroços da torre do cavaleiro nivel 1 (limitar destroços a apenas 100 ou 200 no maximo por entidade/modelo.)
-(X) Criar a torre de cavaleiro do jogador nivel 2
-(X) Criar a torre de cavaleiro do jogador nivel 3
-(X) Criar a torre de cavaleiro do jogador variacao 4-1
-( ) Criar a torre de cavaleiro do jogador variacao 4-2
-
-( ) Criar a torre de arqueiro do jogador nivel 1
-( ) Criar a torre de arqueiro do jogador nivel 2
-( ) Criar a torre de arqueiro do jogador nivel 3
-( ) Criar a torre de arqueiro do jogador variacao 4-1
-( ) Criar a torre de arqueiro do jogador variacao 4-2
-
-( ) Criar a torre de mago do jogador nivel 1
-( ) Criar a torre de mago do jogador nivel 2
-( ) Criar a torre de mago do jogador nivel 3
-( ) Criar a torre de mago do jogador variacao 4-1
-( ) Criar a torre de mago do jogador variacao 4-2
-
-( ) Criar a torre de catapulta do jogador nivel 1
-( ) Criar a torre de catapulta do jogador variacao 2-1
-( ) Criar a torre de catapulta do jogador variacao 2-2
-
-( ) Criar a torre de alquimista do jogador nivel 1
-( ) Criar a torre de alquimista do jogador variacao 2-1
-( ) Criar a torre de alquimista do jogador variacao 2-2
-
-( ) Criar a torre de armadilheiro do jogador nivel 1
-( ) Criar a torre de armadilheiro do jogador variacao 2-1
-( ) Criar a torre de armadilheiro do jogador variacao 2-2
-
-( ) Criar a torre de cavalaria de nivel 1
-( ) Criar a torre de cavalaria de variacao 2-1
-( ) Criar a torre de cavalaria de variacao 2-2
-( ) Criar a torre de cavalaria de variacao 2-3
-
-( ) Criar estruturas de cenario que geralmente ficaram em volta (muros do jogador), arvores, montanhas, estradas etc.
-
-( ) Criar muralha de castelo (inter-conectaveis)
-( ) Criar porta da muralha de castelo (inter-conectavel)
-
-( ) Criar arvore 1
-( ) Criar arvore 2
-( ) Criar arvore 3
-
-( ) Criar pedra 1
-( ) Criar pedra 2
-( ) Criar pedra 3
-
-( ) Criar pequena elevacao 1
-( ) Criar pequena elevacao 2
-( ) Criar pequena elevacao 3
-
-( ) Criar media elevacao 1
-( ) Criar media elevacao 2
-( ) Criar media elevacao 3
-
-( ) Criar grande elevacao 1
-( ) Criar grande elevacao 2
-( ) Criar grande elevacao 3
 
 
----Substance Painter
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 BUGS E VALIDAÇÕES:
-(X) A WeaknessesSO possui uma matrix de floats que nao esta sendo corretamente serializada pela UNITY nem pelo ODIN, verificar o motivo e talvez refazer a serializacao manualmente.
-(X) Fazer uma validação no MapSO, para que o "AlignmentsOpponents" possua os alinhamentos (times) de todos os alinhamentos (times) presentes nas ondas de inimigos/minions.
-(X) Arrumado bug que estava resetando errado o alignment ao respawnar o agente, no codigo AgentEnemyColliderManager
-* Existem 2 possiveis bugs relacionados as torres e os inimigos:
-(X) O primeiro acontece quando uma torre e destruida e existe outra proxima, mas o inimigo nao consegue ir ate ela e acaba se perdendo.
-* Identificado erro acima, motivo e que esta comparando diferentes gameobjects na hora da remocao dos Priority Goals, para solucionar deve-se trabalhar com "Agents" o script mesmo, la no Priority Goals ao inves de Gameobjects.
-(-) O segundo acontece quando a torre e spawnada pelo player muito rapidamente e a colisao dos inimigos detecta uma torre antes mesmo de ela existir em campo. (esse bug talvez nao exista de fato e apenas uma divagação/suposição.)
-(O) Corrigir as inconsistencias de animacao/FSM states quando o agente deveria estar andando (walk) e na verdade fica parado (idle) se movimentando sem animacao, de forma estatica. (identificado que pode haver inconsistencias ainda devido a velocidade minima que o SetWalkSpeed em algum lugar esta atribuindo)
-(X) Corrigir bug no cooldown de ataque dos agentes (simulado erro ao inimigo verde bater nas estruturas principais do jogo).
-(-) Corrigir bug das criaturas ao atacar estruturas quando estao atacando algum canto em que o codigo nao preve no distanciamento minimo.
-(-) Corrigir bug das criaturas ao uma criatura inimiga nascer dentro do range de colisao de outra inimiga.
-(X) Corrigir/Encontrado bug quando o agente aliado do jogador "team1" estiver impossibilitado de alcancar o inimigo ou muito longe, o mesmo acaba batendo na propria torre. (verificar de impedir o ataque a alinhamentos aliados no onreceiveDamage do agente).
-(X) Corrigir/Encontrado bug onde a variavel isMakingAttack dentro de timedattacks esta sendo setada para true num periodo de tempo incorreto, causando animacao de ataques infinitos.
-(X) corrigir/Encontrado bug no wave spawner, quando ha apenas um individuo inimigo na wave para nascer e o mesmo acaba spawnando um segundo que nao deveria existir.
-(X) Corrigir/Encontrado bug onde o colisor fisico da torre jogavel permanece desabilitado apos ser reconvocado do sistema de pooling
-(X) Os agentes inimigos estao ignorando os agentes aliados (nao estao atacando) (encontrado problema no alinhamento e resolvido, encontrado problema no valor do radius do colisor de deteccao de inimigos)
-(X) As vezes quando os agentes inimigos estao amontoados, alguns acabam tendo problema de colisao e caem infinitamente para dentro do mapa (parte inferior do mapa) (isso pode ser resolvido aumentando a largura do colisor do chao do mapa)
-(X) Verificar porque ao evoluir uma torre, seus subspawns acabam todos spawnados instantaneamente
-(X) Encontrado problema nos ataques a distancia que sao muito lentos, eles acabam sendo repoolados na metade do caminho por causa de sua duracao/velocidade.
-(X) Corrigido/Encontrado erro ao evoluir torres com vida menor que 100%
-(X) Ajustar animacao de spawn ao evoluir uma torre
-(X) Encontrado erro ao aplicar status atraves de ataque nos agentes (os metodos de pooling estao sendo chamados repetidas vezes ocasionando em erros de nulidade).
-(X) Fazer com que as flags das torres nao possam ser colocadas em lugares que ja estiverem ocupados por outros tipos de colisores jogaveis.
-(X) Corrigido erro encontrado ao reproduzir sons de LOOPing o algoritmo SoundFX nao consegue finalizar e acaba sendo infinito.
-(X) Verificar erro na animacao de particulas de trilha (trail), em alguns momentos a trilha segue para a posicao zero do jogo.
-(X) Corrigir calculo de distancia para fazer ataques a longa distancia. (hoje esta usando apenas o minimun attack distance, tem que user o attack range do agente tambem pra descobrir o maximo, pois o minimo e o range do ataque.)
-(X) Fazer com que a fuga do agente (criatura) va apenas ate o limite de distancia da torre de seu mestre.
-(-) Corrigir animacao de caminhada apos fugir (esta acontecendo algun tipo de problema onde o agente fica infinitamente atacando e andando apos tomar distancia de combate minimo).
-(X) Corrigir animacao quando um agente criatura esta batendo num agente estrutura, a criatura nao consegue ficar em estado Idle, ela apenas alterna entre Walk e Attack.
 ( ) Encontrado problema onde as vezes os agentes subspawns atacam os seus mestres logo antes de comecarem a atacar seus inimigos prioritarios. (Talvez o bug esteja no ActualGoal ou algo assim.) (Fazer uma verificacao se o objeto mestre for do mesmo alinhamento cancela o ataque.)
-(X) Corrigir o pause para parar o tempo tambem. (verificar como a unity faz, e verificar como o pessoal faz.)
-(-) Verificar o algoritmo de AnimationFX nao esta finalizando adequadamente as animacoes.
-(X) Corrigir o problema onde ao tentar posicionar uma torre enquanto a interface do jogo estiver por cima do mouse, a torre acaba sendo posicionada. (o ideal e que a interface exerca prioridade no clique ao inves do jogo.)
-(X) Corrigir problema quando os inimigos derrotam o CATALISADOR, e vão em direção ao GERADOR, não conseguem mais atacar, a IA fica paralisada no mesmo estado.
 ( ) Encontrado bug quando houver apenas um inimigo vivo, e o mesmo evoluir, o jogo brevemente ira pensar que acabou porque ao evoluir o inimigo some por alguns instantes, e entao o jogo acha que nao existe mais inimigos vivos e encerra como jogador vitorioso.

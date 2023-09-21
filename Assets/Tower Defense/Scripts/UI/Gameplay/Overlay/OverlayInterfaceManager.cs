@@ -28,6 +28,15 @@ public class OverlayInterfaceManager : Singleton<OverlayInterfaceManager>
     [Required]
     [SceneObjectsOnly]
     public GameObject panel_3_2_1;
+    [BoxGroup("Interface Objects")]
+    [Title("Panel 7")]
+    [Required]
+    [SceneObjectsOnly]
+    public GameObject panel_7;
+    [BoxGroup("Interface Objects")]
+    [Required]
+    [SceneObjectsOnly]
+    public GameObject panel_7_1;
     // Public (Variables) [END]
 
 
@@ -45,6 +54,16 @@ public class OverlayInterfaceManager : Singleton<OverlayInterfaceManager>
     public void OpenStructureEvolutionPanel()
     {
         panel_3_2_1.SetActive(true);
+    }
+    public void OpenAgentPlacementPanel()
+    {
+        panel_7.SetActive(true);
+        panel_7_1.SetActive(true);
+    }
+    public void CloseAgentPlacementPanel()
+    {
+        panel_7_1.SetActive(false);
+        panel_7.SetActive(false);
     }
     // Public (Methods) [END]
 }

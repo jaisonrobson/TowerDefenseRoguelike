@@ -30,7 +30,7 @@ public class StructureEvolutionController : Singleton<StructureEvolutionControll
             newStructure.transform.position = sem.Position;
 
             newStructure.GetComponent<Agent>().Alignment = MapManager.instance.map.playerAlignment.alignment;
-            newStructure.GetComponent<PlayableStructure>().PlaceStructure();
+            newStructure.GetComponent<PlayableStructure>().PlaceStructure(newStructure.GetComponent<PlayableStructure>().PlacementArea);
             newStructure.GetComponent<PlayableStructure>().InitializeGoalFlag(true);
 
             newStructure.SetFlagPosition(sem.FlagPosition);

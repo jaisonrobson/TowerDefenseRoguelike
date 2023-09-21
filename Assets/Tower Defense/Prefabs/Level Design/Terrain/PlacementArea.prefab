@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5922541246175128769}
   - component: {fileID: 1036384785520396784}
   m_Layer: 8
-  m_Name: PlacementArea_Mesh
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2230714367681866415}
   - component: {fileID: 3977321557868572046}
   m_Layer: 8
-  m_Name: PlacementArea_Team_1
+  m_Name: PlacementArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,8 +110,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3100183274485932662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 525812243}

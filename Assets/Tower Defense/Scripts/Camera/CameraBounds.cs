@@ -4,12 +4,22 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Core.Patterns;
 public class CameraBounds : Singleton<CameraBounds>
-{
-    public Bounds bounds { get { return m_Bounds; } set { m_Bounds = value; } }
+{    
+    public float Radius { get { return m_Radius; } set { m_Radius = value; } }
+    public float Height { get { return m_Height; } }
+    public Vector3 Center { get { return m_Center; } }
 
     [ShowInInspector]
     [SerializeField]
-    private Bounds m_Bounds = new Bounds(Vector3.zero, Vector3.one * 25f);
+    private float m_Radius = 100f;
+
+    [ShowInInspector]
+    [SerializeField]
+    private float m_Height = 30f;
+
+    [ShowInInspector]
+    [SerializeField]
+    private Vector3 m_Center = new Vector3(0, 0, 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

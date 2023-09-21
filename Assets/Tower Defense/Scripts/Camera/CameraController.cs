@@ -219,10 +219,19 @@ public class CameraController : Singleton<CameraController>
     // Secondary Methods [START]
     void NewPositionClamping()
     {
+        float distance = Vector3.Distance(newPosition, CameraBounds.instance.Center);
+
+        if (distance > CameraBounds.instance.Radius)
+        {
+            Vector3 fromOriginToObject = newPosition - CameraBounds.instance.Center; //~GreenPosition~ - *BlackCenter*
+            fromOriginToObject *= CameraBounds.instance.Radius / distance; //Multiply by radius //Divide by Distance
+            newPosition = CameraBounds.instance.Center + fromOriginToObject; //*BlackCenter* + all that Math
+        }
+
         newPosition = new Vector3(
-            Mathf.Clamp(newPosition.x, CameraBounds.instance.bounds.min.x, CameraBounds.instance.bounds.max.x),
-            Mathf.Clamp(newPosition.y, CameraBounds.instance.bounds.min.y, CameraBounds.instance.bounds.max.y),
-            Mathf.Clamp(newPosition.z, CameraBounds.instance.bounds.min.z, CameraBounds.instance.bounds.max.z)
+                newPosition.x,
+                Mathf.Clamp(newPosition.y, CameraBounds.instance.Center.y - (CameraBounds.instance.Height / 2), CameraBounds.instance.Center.y + (CameraBounds.instance.Height / 2)),
+                newPosition.z
             );
     }
     // Secondary Methods [END]

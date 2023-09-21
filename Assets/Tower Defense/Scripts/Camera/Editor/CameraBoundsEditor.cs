@@ -5,18 +5,31 @@ using UnityEditor.IMGUI.Controls;
 [CustomEditor(typeof(CameraBounds))]
 public class CameraBoundsEditor : Editor
 {
-    private BoxBoundsHandle m_BoundsHandle = new BoxBoundsHandle();
+    private SphereBoundsHandle m_BoundsHandle_1 = new SphereBoundsHandle();
+    private SphereBoundsHandle m_BoundsHandle_2 = new SphereBoundsHandle();
 
     protected virtual void OnSceneGUI()
     {
         CameraBounds cameraBounds = (CameraBounds)target;
 
-        m_BoundsHandle.center = cameraBounds.bounds.center;
-        m_BoundsHandle.size = cameraBounds.bounds.size;
+        m_BoundsHandle_1.center = new Vector3(cameraBounds.Center.x, cameraBounds.Center.y - cameraBounds.Height, cameraBounds.Center.z);
+        m_BoundsHandle_1.radius = cameraBounds.Radius;
 
+        m_BoundsHandle_1.axes = PrimitiveBoundsHandle.Axes.X | PrimitiveBoundsHandle.Axes.Z;
+
+        m_BoundsHandle_1.DrawHandle();
+
+        m_BoundsHandle_2.center = new Vector3(cameraBounds.Center.x, cameraBounds.Center.y + cameraBounds.Height, cameraBounds.Center.z);
+        m_BoundsHandle_2.radius = cameraBounds.Radius;
+
+        m_BoundsHandle_2.axes = PrimitiveBoundsHandle.Axes.X | PrimitiveBoundsHandle.Axes.Z;
+
+        m_BoundsHandle_2.DrawHandle();
+
+        /*
         EditorGUI.BeginChangeCheck();
 
-        m_BoundsHandle.DrawHandle();
+        
 
         if (EditorGUI.EndChangeCheck())
         {
@@ -28,6 +41,7 @@ public class CameraBoundsEditor : Editor
 
             cameraBounds.bounds = newBounds;
         }
+        */
     }
 }
 

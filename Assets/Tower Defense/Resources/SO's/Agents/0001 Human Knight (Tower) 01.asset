@@ -128,9 +128,9 @@ MonoBehaviour:
   health: 25
   damage: 15
   attackVelocity: 0.5
-  attackRange: 10
+  attackRange: 25
   velocity: 3
-  visibilityArea: 15
+  visibilityArea: 35
   evasion: {x: 0, y: 10}
   evolutionTree:
   - {fileID: 11400000, guid: 3111548a9635bd943ad329ba3538bf0c, type: 2}

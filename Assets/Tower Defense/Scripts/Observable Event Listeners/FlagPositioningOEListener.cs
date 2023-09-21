@@ -22,7 +22,7 @@ public class FlagPositioningOEListener : ObservableEventListener
 
             if (ps)
             {
-                RaycastHit hit = Raycasting.ScreenPointToRay(StructurePlacementController.instance.groundLayer);
+                RaycastHit hit = Raycasting.ScreenPointToRay(AgentPlacementController.instance.groundLayer);
 
                 if (!Raycasting.IsHitEmpty(hit))
                     ps.SetFlagPosition(hit.point);

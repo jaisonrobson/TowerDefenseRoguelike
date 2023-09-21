@@ -24,6 +24,7 @@ public class PlayableStructure : Structure
     private bool isPlaced = false;
     private Transform goalFlag;
     private bool flagPositionInitialized = false;
+    private PlacementArea placementArea = null;
     // Private (Variables) [END]
 
     // Public (Properties) [START]
@@ -32,6 +33,7 @@ public class PlayableStructure : Structure
     public bool FlagPositionInitialized { get { return flagPositionInitialized; } set { flagPositionInitialized = value; } }
     public bool HasEvolution { get { return agent.evolutionTree.Count > 0; } }
     public bool IsMultipleEvolution { get { return agent.evolutionTree.Count > 1; } }
+    public PlacementArea PlacementArea { get { return placementArea; } }
     // Public (Properties) [END]
 
     // (Unity) Methods [START]
@@ -75,6 +77,7 @@ public class PlayableStructure : Structure
     }
     private void ResetStructurePlacement()
     {
+        placementArea = null;
         isPlaced = false;
         structure.SetActive(false);
         ghost.SetActive(true);
@@ -108,9 +111,10 @@ public class PlayableStructure : Structure
             goalFlag.SetParent(this.transform, false);
         }
     }
-    public void PlaceStructure()
+    public void PlaceStructure(PlacementArea pPlacementArea)
     {
         isPlaced = true;
+        placementArea = pPlacementArea;
 
         DoSpawnFXs();
     }
@@ -122,6 +126,9 @@ public class PlayableStructure : Structure
     }
     public override void PoolInsertionAction(Poolable poolable)
     {
+        if (placementArea != null)
+            placementArea.CurrentOccupyingAgent = null;
+
         GetComponentInChildren<StructurePlacementCollisionManager>(true).PoolInsertionAction();
 
         ResetStructurePlacement();

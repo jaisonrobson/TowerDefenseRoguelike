@@ -78,6 +78,13 @@ public class GameManager : Singleton<GameManager>
         isPaused = false;
         Time.timeScale = 1f;
     }
+    public void SetTimeScale(float scale)
+    {
+        float newScale = Mathf.Clamp(scale, 0.05f, 3f);
+
+        Time.timeScale = newScale;
+    }
+    public void ResetTimeScale() => Time.timeScale = 1f;
     // Public (Methods) [END]
 }
 
