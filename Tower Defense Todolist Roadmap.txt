@@ -7,9 +7,7 @@ LEGENDA:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ( ) Procurar um shader para servir de dissolução dos destroços das estruturas e corpos dos agentes apos morrerem. (Dissolve Shader, Dithering.) ou verificar como a remoção/transição de meshes ocorre nos jogos.
-
 ( ) Criar um sistema de disponibilidade de evolucao de torres para o jogador de acordo com o mapa (ex: algumas torres nao estaram desbloqueadas para uso naquele mapa, nem por evolucao, ou evolucoes especificas).
-
 (X) Ajustar uma area horizontal dirigida na interface world space de cada agente para exibir informacoes de status do agente
 ( ) Ajustar uma area horizontal dirigida na interface world space de cada agente para exibir informacoes de disponibilidade de recursos (evolução, etc.)
 
@@ -20,23 +18,28 @@ LEGENDA:
 (X) O jogo não sera mais em varios niveis/mapas, mas apenas um mapa onde o jogador tera que lidar com varios aspectos de rejogabilidade/roguelike/aleatoriedade/rng.
 (X) Alterar o mapa e a area jogavel para serem redondos/circulares.
 
-( ) Não havera mais areas de construção livre, mas sim pontos pre-definidos em todas as fogs, onde cada ponto sera possivel escolher a torre que ocupara o mesmo.
-(X) Fazer com que ao selecionar o ponto, uma interface com todas as torres possiveis de construcao, se abra. (essa interface deve informar o nome e algumas estatisticas de cada torre.)
-
 ( ) Inicialmente so havera apenas o heroi no mapa que o jogador selecionou na tela de lobby.
-( ) Em cada fog havera 3 pontos de construção disponiveis que estaram geograficamente pre-definidos.
-( ) O spawn dos inimigos devera ocorrer no limite da area jogavel ate a onde as fogs foram descobertas, mas os monstros devem surgir obrigatoriamente de dentro da fog.
-
-( ) As estruturas principais demarcaram a condição de derrota (caso ele perda o heroi, o jogo acaba)
-( ) Os spawns dos inimigos sera feito de forma aleatoria ao redor do mapa (literalmente em qualquer regiao em volta do jogador, com certa distancia de demarcação limite do jogador.)
-( ) Havera um fog of war em volta de uma area predefinida que sera relevado apos um certo numero de waves. 
-( ) depois que o último inimigo da wave morrer, o jogador vai escolher a recompensa. Aí sim a wave acaba e começa outra
-( ) A fog sera limitado a 3 areas de fog of war por Run.
-( ) Ao descobrir uma fog, a quantidade de monstros spawnados sera sempre cada vez maior e mais forte
 ( ) O heroi possuira habilidades ativas, que poderao ser usadas em tempo real, para atacar os inimigos.
 ( ) Cada heroi possuira habilidades diferentes.
+(X) As estruturas principais demarcaram a condição de derrota (caso ele perda o heroi, o jogo acaba)
 
+(X) Os spawns dos inimigos serao feitos de forma aleatoria ao redor do mapa (literalmente em qualquer regiao em volta do jogador, com certa distancia de demarcação limite do jogador.)
+(X) O spawn dos inimigos devera ocorrer no limite da area jogavel ate a onde as fogs foram descobertas, mas os monstros devem surgir obrigatoriamente de dentro da fog.
+(-) depois que o último inimigo da wave morrer, o jogador vai escolher a recompensa. Aí sim a wave acaba e começa outra
+(X) Havera um fog of war em volta de uma area predefinida que sera relevado apos um certo numero de waves. 
+(X) Ao descobrir uma fog, a quantidade de monstros spawnados sera sempre cada vez maior e mais forte
+(X) A fog sera limitado a 3 areas de fog of war por Run.
 
+(X) Não havera mais areas de construção livre, mas sim pontos pre-definidos em todas as fogs, onde cada ponto sera possivel escolher a torre que ocupara o mesmo.
+(X) Fazer com que ao selecionar o ponto, uma interface com todas as torres possiveis de construcao, se abra. (essa interface deve informar o nome e algumas estatisticas de cada torre.)
+
+( ) Fazer com que o jogador tenha um nivel e experiencia
+( ) Fazer com que ao subir de nivel o jogador possa escolher um item pra ajudar durante a gameplay/run
+
+( ) 3 areas de construcao perto do heroi para torres de ataque (fog 1)
+( ) 3 areas de construcao para catalisadores (fog 2)
+
+* Perguntar se a wave deve acabar quando todos os inimigos daquela wave morrerem ou se as waves podem continuar tocando mesmo tendo os inimigos da anterior ainda vivos.
 
 
 

@@ -14,59 +14,10 @@ using Core.Math;
 public class WaveController : OdinSingleton<WaveController>
 {
     /// <summary>
-    /// The spawn points that the enemies will be spawned.
-    /// A random point between this list is selected each time a enemy is spawned.
-    /// </summary>
-    [Required]
-    [SceneObjectsOnly]
-    [ListDrawerSettings(Expanded = true)]
-    [ValidateInput("Validate_MustHaveElements_SpawnPoints", "The spawn points list, must have at least one element.")]
-    [ValidateInput("Validate_ValidElements_SpawnPoints_Aligned", "[Spawn Points] must have all alignment types stated by MapSO or at least one generic type declared.")]
-    public List<SpawnPointManager> spawnPoints = new List<SpawnPointManager>();
-
-    /// <summary>
-    /// The time that the system will wait until starts the next wave counting.
-    /// 
-    /// * There is a different field for each simultaneous wave sequence.
-    /// </summary>
-    /// 
-    [MinValue(0f)]
-    [Required]
-    [ListDrawerSettings(Expanded = true)]
-    [OnCollectionChanged(After = "After_CollectionChange_TimeBetweenWaves")]
-    [ValidateInput("Validate_MustHaveCollectionSize_TimeBetweenWaves", "[TimeBetweenWaves] must have collection size the same as the configured MapSO Aligned Waves sequences.")]
-    public List<float> timeBetweenWaves = new List<float>();
-
-    /// <summary>
-    /// The waves that already finished. (its monsters got already spawned)
-    /// The int shows the wave order, starting from 0 (zero) for the first wave and so on.
-    /// 
-    /// * There is a different field for each simultaneous wave sequence.
-    /// </summary>
-    [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private Dictionary<int, WaveSO>[] wavesHistory;
-
-    /// <summary>
-    /// The index on the map waves of the actual wave that is running
-    /// 
-    /// * There is a different field for each simultaneous wave sequence.
-    /// </summary>
-    [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private int[] runningWave;
-
-    /// <summary>
     /// Did the player pressed the start button?
     /// </summary>
     [SerializeField, HideInEditorMode, DisableInPlayMode]
     private bool isRunning = false;
-
-    /// <summary>
-    /// Is the wave sequence running
-    /// 
-    /// * There is a different field for each simultaneous wave sequence.
-    /// </summary>
-    [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private bool[] isRunningSequence;
 
     /// <summary>
     /// The time since the player pressed the start button until the last monster of the last wave is killed.
@@ -75,22 +26,19 @@ public class WaveController : OdinSingleton<WaveController>
     private float runningTime = 0f;
 
     /// <summary>
+    /// The index on the map waves of the actual wave that is running
+    ///
+    /// </summary>
+    [SerializeField, HideInEditorMode, DisableInPlayMode]
+    private int runningWave;
+
+    /// <summary>
     /// The time since the start of the actual wave.
     /// This gets reset at every new wave.
     /// 
-    /// * There is a different field for each simultaneous wave sequence.
     /// </summary>
     [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private float[] actualWaveRunningTime;
-
-    /// <summary>
-    /// The waiting time the wave did before start
-    /// 
-    ///  * This gets reset at every new wave.
-    ///  * There is a different field for each simultaneous wave sequence.
-    /// </summary>
-    [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private float[] actualWaveWaitedTime;
+    private float actualWaveRunningTime;
 
     /// <summary>
     /// This stores the next index on the wave of the agent and the spawn time of the next agent that will be spawned at the running wave.
@@ -98,21 +46,22 @@ public class WaveController : OdinSingleton<WaveController>
     /// * There is a different field for each simultaneous wave sequence.
     /// </summary>
     [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private int[] nextIndexToSpawn;
-
-    /// <summary>
-    /// Tells if the wave is waiting the configured time before start the next one.
-    /// 
-    /// * There is a different field for each simultaneous wave sequence.
-    /// </summary>
-    [SerializeField, HideInEditorMode, DisableInPlayMode]
-    private bool[] isUnderWaitTime;
+    private int agentGroupIndexToSpawn;
 
     private List<GameObject> spawnedAgents;
 
-    //Aux variable
-    private int actualAgentSpawningIndex;
-    private Transform lastRandomSpawnPointPicked;
+    private int finalizedFogOneWaves;
+    private int finalizedFogTwoWaves;
+    private int finalizedFogThreeWaves;
+
+    [SerializeField, HideInEditorMode, DisableInPlayMode]
+    private List<WaveSO> fogOneWaves;
+    [SerializeField, HideInEditorMode, DisableInPlayMode]
+    private List<WaveSO> fogTwoWaves;
+    [SerializeField, HideInEditorMode, DisableInPlayMode]
+    private List<WaveSO> fogThreeWaves;
+
+
 
     // Public (Properties) [START]
     public bool IsRunning { get { return isRunning; } }
@@ -144,22 +93,123 @@ public class WaveController : OdinSingleton<WaveController>
 
         ResetWavesOperations();
     }
-    private List<SpawnPointManager> GetSpawnPointsGrouped(AlignmentEnum alignment, bool includeGeneric = false)
-    {
-        return spawnPoints.Where(sp => sp.alignment == alignment || (includeGeneric && sp.alignment == 0)).ToList();
-    }
     private void HandleWavesOperation()
     {
         if (!isRunning) return;
 
-        if (DidAllWavesSequences())
+        if (DidAllWaves())
             isRunning = false;
     }
-    private bool DidAllWavesInSequence(int sequenceIndex) { return !isRunningSequence[sequenceIndex]; }
-    private bool DidAllWavesSequences() { return isRunningSequence.All(isRun => isRun == false); }
-    private AlignedWaveSO[][] GetMapAlignedWaves() { return MapManager.instance.map.alignedWaves; }
-    private WaveSO GetRunningWave(int index) { return GetMapAlignedWaves()[index][runningWave[index]].wave; }
-    private AlignedWaveSO GetRunningAlignedWave(int index) { return GetMapAlignedWaves()[index][runningWave[index]]; }
+    private bool DidAllWaves() { return DidAllWavesFogOne() && DidAllWavesFogTwo() && DidAllWavesFogThree(); }
+    private bool DidAllWavesFogOne() => finalizedFogOneWaves >= fogOneWaves.Count;
+    private bool DidAllWavesFogTwo() => finalizedFogTwoWaves >= fogTwoWaves.Count;
+    private bool DidAllWavesFogThree() => finalizedFogThreeWaves >= fogThreeWaves.Count;
+    private WaveSO GetRunningWave()
+    {
+        switch (FogManager.instance.ActualFogDiscoveryStage)
+        {
+            case 1:
+                return fogOneWaves.ElementAt(runningWave);
+            case 2:
+                return fogTwoWaves.ElementAt(runningWave);
+            case 3:
+                return fogThreeWaves.ElementAt(runningWave);
+        }
+
+        return null;
+    }
+    private AlignedWaveSO GetRunningAlignedWave()
+    {
+        int waveCounter = 0;
+        AlignedWaveSO result = null;
+
+        switch (FogManager.instance.ActualFogDiscoveryStage)
+        {
+            case 1:
+                MapManager.instance.map.fogOneWaves.ToList().ForEach(aw =>
+                {
+                    if (waveCounter == runningWave)
+                    {
+                        result = aw;
+                        return;
+                    }
+                    
+                    aw.waves.ToList().ForEach(wave =>
+                    {
+                        if (waveCounter == runningWave)
+                        {
+                            result = aw;
+
+                            return;
+                        }
+                        else
+                            waveCounter++;
+                    });
+                });
+                break;
+            case 2:
+                MapManager.instance.map.fogTwoWaves.ToList().ForEach(aw =>
+                {
+                    if (waveCounter == runningWave)
+                    {
+                        result = aw;
+                        return;
+                    }
+
+                    aw.waves.ToList().ForEach(wave =>
+                    {
+                        if (waveCounter == runningWave)
+                        {
+                            result = aw;
+
+                            return;
+                        }
+                        else
+                            waveCounter++;
+                    });
+                });
+                break;
+            case 3:
+                MapManager.instance.map.fogThreeWaves.ToList().ForEach(aw =>
+                {
+                    if (waveCounter == runningWave)
+                    {
+                        result = aw;
+                        return;
+                    }
+
+                    aw.waves.ToList().ForEach(wave =>
+                    {
+                        if (waveCounter == runningWave)
+                        {
+                            result = aw;
+
+                            return;
+                        }
+                        else
+                            waveCounter++;
+                    });
+                });
+                break;
+        }
+
+        return result;
+    }
+
+    private int GetFogWavesCount()
+    {
+        int result = 0;
+        switch (FogManager.instance.ActualFogDiscoveryStage)
+        {
+            case 1:
+                return fogOneWaves.Count;
+            case 2:
+                return fogTwoWaves.Count;
+            case 3:
+                return fogThreeWaves.Count;
+        }
+        return result;
+    }
     private void IncrementTimers()
     {
         IncrementTotalTimer();
@@ -168,194 +218,103 @@ public class WaveController : OdinSingleton<WaveController>
     private void IncrementTotalTimer() { runningTime += Time.deltaTime; }
     private void IncrementWavesTimers()
     {
-        for (int i = 0; i < actualWaveRunningTime.Length; i++)
-        {
-            if (DidAllWavesInSequence(i)) continue;
-
-            if (isUnderWaitTime[i])
-            {
-                actualWaveWaitedTime[i] += Time.deltaTime;
-            }
-            else
-            {
-                actualWaveRunningTime[i] += Time.deltaTime;
-            }
-        }
-    }
-    private SpawnPointManager PickRandomSpawnPoint(AlignmentEnum alignment)
-    {
-        //Try to detect firstly the alignment specific points
-        List<SpawnPointManager> alignedPoints = GetSpawnPointsGrouped(alignment);
-
-        //In case no point of specific alignment is detected, try to get generic points
-        if (alignedPoints.Count <= 0)
-            alignedPoints = GetSpawnPointsGrouped(alignment, true);
-
-        //If no point at all is detected, throw error.
-        if (alignedPoints.Count <= 0)
-            throw new System.Exception("No spawn points detected for specific alignment [" + alignment.ToString() + "].");
-
-        return alignedPoints.ElementAt(RNG.Int(alignedPoints.Count()));
+        actualWaveRunningTime += Time.deltaTime;
     }
     private void SpawnAgents()
     {
-        for (int i = 0; i < GetMapAlignedWaves().Length; i++)
+        if (actualWaveRunningTime >= GetRunningWave().spawnTimes.ElementAt(agentGroupIndexToSpawn))
         {
-            actualAgentSpawningIndex = i;
-
-            if (DidAllWavesInSequence(actualAgentSpawningIndex)) continue;
-
-            if (isUnderWaitTime[actualAgentSpawningIndex]) IncrementRunningWave(actualAgentSpawningIndex);
-
-            if (!isRunningSequence[actualAgentSpawningIndex]) return;
-
-            if (!isUnderWaitTime[actualAgentSpawningIndex] && actualWaveRunningTime[actualAgentSpawningIndex] >= GetRunningWave(actualAgentSpawningIndex).spawnTimes.ElementAt(nextIndexToSpawn[actualAgentSpawningIndex]))
-            {
-                SpawnAgent(actualAgentSpawningIndex);
-
-                IncrementNextIndexToSpawn(actualAgentSpawningIndex);
-            }
+            SpawnAgent();
+            IncrementNextAgentGroupIndexToSpawn();
         }
     }
-    private void SpawnAgent(int index)
+    private void SpawnAgent()
     {
-        GameObject agent = Poolable.TryGetPoolable(GetRunningWave(index).agents.ElementAt(nextIndexToSpawn[index]).prefab, OnRetrievePoolableAgent);
+        GetRunningWave().agentsGroup.ElementAt(agentGroupIndexToSpawn).agents.ToList().ForEach(agt =>
+        {
+            GameObject agent = Poolable.TryGetPoolable(agt.prefab, OnRetrievePoolableAgent);
 
-        agent.gameObject.GetComponent<Agent>().DoSpawnFXs();
+            agent.gameObject.GetComponent<Agent>().DoSpawnFXs();
 
-        spawnedAgents.Add(agent);
+            spawnedAgents.Add(agent);
+        });
     }
     public void OnRetrievePoolableAgent(Poolable agent)
     {
-        lastRandomSpawnPointPicked = PickRandomSpawnPoint(GetRunningAlignedWave(actualAgentSpawningIndex).alignment.alignment).transform;
+        Vector3 spawnPoint = FogManager.instance.GenerateRandomSpawnPosition();
 
-        agent.transform.SetPositionAndRotation(lastRandomSpawnPointPicked.position, lastRandomSpawnPointPicked.rotation);
-        agent.gameObject.GetComponent<AIPath>().Teleport(lastRandomSpawnPointPicked.position);
-        agent.gameObject.GetComponent<Agent>().Alignment = GetRunningAlignedWave(actualAgentSpawningIndex).alignment.alignment;
+        agent.transform.position = spawnPoint;
+        agent.gameObject.GetComponent<AIPath>().Teleport(spawnPoint);
+        agent.gameObject.GetComponent<Agent>().Alignment = GetRunningAlignedWave().alignment.alignment;
     }
-    private void IncrementNextIndexToSpawn(int index)
+    private void IncrementNextAgentGroupIndexToSpawn()
     {
-        int newIndexToSpawn = nextIndexToSpawn[index] + 1;
+        int nextAgentGroupIndexToSpawn = agentGroupIndexToSpawn + 1;
 
-        if (newIndexToSpawn >= GetRunningWave(index).agents.Count())
-        {
-            IncrementRunningWave(index);
-        }
+        if (nextAgentGroupIndexToSpawn >= GetRunningWave().agentsGroup.Length)
+            IncrementRunningWave();
         else
-        {
-            nextIndexToSpawn[index]++;
-        }
+            agentGroupIndexToSpawn++;
     }
-    private void IncrementRunningWave(int index)
+    private void IncrementRunningWave()
     {
-        if (CanAdvanceWave(index))
+        agentGroupIndexToSpawn = 0;
+        actualWaveRunningTime = 0f;
+        runningWave++;
+        
+        if (runningWave >= GetFogWavesCount())
         {
-            isUnderWaitTime[index] = false;
-            nextIndexToSpawn[index] = 0;
-            actualWaveRunningTime[index] = 0f;
-            actualWaveWaitedTime[index] = 0f;
-            wavesHistory[index].Add(runningWave[index], GetRunningWave(index));
-            int newRunningWave = runningWave[index] + 1;
+            runningWave = 0;
 
-            if (newRunningWave >= GetMapAlignedWaves()[index].Length)
-            {
-                isRunningSequence[index] = false;
-            }
+            if (FogManager.instance.ActualFogDiscoveryStage < 3)
+                FogManager.instance.DiscoverNewFog();
             else
-            {
-                runningWave[index]++;
-            }
-        }
-        else
-        {
-            isUnderWaitTime[index] = true;
+                isRunning = false;
         }
     }
 
-    private bool CanAdvanceWave(int index) { return actualWaveRunningTime[index] >= GetRunningWave(index).spawnTimes.ElementAt(GetRunningWave(index).spawnTimes.Length - 1) && actualWaveWaitedTime[index] >= timeBetweenWaves[index]; }
     private void ResetWavesOperations()
     {
         runningTime = 0f;
-        wavesHistory = new Dictionary<int, WaveSO>[GetMapAlignedWaves().Length];
-        runningWave = new int[GetMapAlignedWaves().Length];
-        nextIndexToSpawn = new int[GetMapAlignedWaves().Length];
-        actualWaveRunningTime = new float[GetMapAlignedWaves().Length];
-        isUnderWaitTime = new bool[GetMapAlignedWaves().Length];
-        isRunningSequence = new bool[GetMapAlignedWaves().Length];
-        actualWaveWaitedTime = new float[GetMapAlignedWaves().Length];
+        runningWave = 0;
+        agentGroupIndexToSpawn = 0;
+        actualWaveRunningTime = 0f;
+        finalizedFogOneWaves = 0;
+        finalizedFogTwoWaves = 0;
+        finalizedFogThreeWaves = 0;
 
-        for (int i = 0; i < GetMapAlignedWaves().Length; i++)
-        {
-            wavesHistory[i] = new Dictionary<int, WaveSO>();
-            wavesHistory[i].Clear();
-            runningWave[i] = 0;
-            nextIndexToSpawn[i] = 0;
-            isUnderWaitTime[i] = false;
-            actualWaveRunningTime[i] = 0f;
-            actualWaveWaitedTime[i] = 0f;
-            isRunningSequence[i] = true;
-        }
+        ResetFogOneWaves();
+        ResetFogTwoWaves();
+        ResetFogThreeWaves();
+    }
+    private void ResetFogOneWaves()
+    {
+        fogOneWaves = new List<WaveSO>();
+
+        MapManager.instance.map.fogOneWaves.ToList().ForEach(alignedWaves => fogOneWaves.AddRange(alignedWaves.waves.ToList()));
+    }
+    private void ResetFogTwoWaves()
+    {
+        fogTwoWaves = new List<WaveSO>();
+
+        MapManager.instance.map.fogTwoWaves.ToList().ForEach(alignedWaves => fogTwoWaves.AddRange(alignedWaves.waves.ToList()));
+    }
+    private void ResetFogThreeWaves()
+    {
+        fogThreeWaves = new List<WaveSO>();
+
+        MapManager.instance.map.fogThreeWaves.ToList().ForEach(alignedWaves => fogThreeWaves.AddRange(alignedWaves.waves.ToList()));
     }
     // Private Methods [END]
 
     // Public Methods [START]
     public void StartWaves()
     {
+        FogManager.instance.StartFog();
+
         isRunning = true;
     }
     // Public Methods [END]
-
-    // Validation Methods [START]
-#if UNITY_EDITOR
-    private void After_CollectionChange_TimeBetweenWaves(CollectionChangeInfo info, object value)
-    {
-        MapManager mapManager = FindObjectOfType<MapManager>();
-
-        if (mapManager.map == null)
-            throw new System.Exception("MapManager do not contain a MapSO configured, failed to change [timeBetweenWaves] collection size.");
-
-        switch (info.ChangeType)
-        {
-            case CollectionChangeType.Insert:
-            case CollectionChangeType.Add:
-                if (timeBetweenWaves.Count > mapManager.map.alignedWaves.Length)
-                    timeBetweenWaves.RemoveAt(timeBetweenWaves.Count - 1);
-                break;
-            case CollectionChangeType.RemoveIndex:
-            case CollectionChangeType.RemoveValue:
-                if (timeBetweenWaves.Count < mapManager.map.alignedWaves.Length)
-                    timeBetweenWaves.Add(0);
-                break;
-        }
-    }
-    private bool Validate_MustHaveCollectionSize_TimeBetweenWaves()
-    {
-        MapManager mapManager = FindObjectOfType<MapManager>();
-
-        if (mapManager.map == null)
-            return true;
-
-        return timeBetweenWaves.Count == mapManager.map.alignedWaves.Length;
-    }
-    private bool Validate_MustHaveElements_SpawnPoints() { return spawnPoints != null && spawnPoints.Count > 0; }
-    private bool Validate_ValidElements_SpawnPoints_Aligned()
-    {
-        if (spawnPoints == null || spawnPoints.Count == 0) return true;
-
-        MapManager mapManager = FindObjectOfType<MapManager>();
-
-        if (mapManager.map == null)
-            return true;
-
-        return mapManager.map.alignmentsOpponents.ToList().All(
-            ao =>
-                ao.alignment.alignment != mapManager.map.playerAlignment.alignment
-                && spawnPoints.Any(sp => sp.alignment == ao.alignment.alignment || sp.alignment == 0)
-                || ao.alignment.alignment == mapManager.map.playerAlignment.alignment
-        );
-    }
-#endif
-    // Validation Methods [END]
 }
 
 ////////////////////////////////////////////////////////////////////////////////

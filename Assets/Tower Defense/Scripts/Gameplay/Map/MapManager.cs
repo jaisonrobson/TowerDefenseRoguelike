@@ -38,6 +38,7 @@ public class MapManager : Singleton<MapManager>
     [Title("Map Structures")]
     [ValidateInput("Validate_MustHaveElements_MapEntityHooks", "Map Entity Hooks must have at least one valid element.")]
     public List<MapEntityHook> mapEntityHooks;
+
     // Public (Variables) [END]
 
     // Public (Properties) [START]
@@ -55,7 +56,7 @@ public class MapManager : Singleton<MapManager>
     // Unity Methods [END]
 
 
-    // Private Methods [START]
+    // Private Methods [START]    
     private void InitializeMap()
     {
         string selectedMapName = PlayerPrefs.GetString("selectedMapName");
@@ -96,11 +97,6 @@ public class MapManager : Singleton<MapManager>
                 if (pe.subtype == pMeh.type)
                     result = pe.prefab;
             });
-        }
-        else
-        {
-            //Por enquanto nao existe entidade inimiga estrutural em mapas.
-            //(Se isso for programado algum dia, criar um campo em MapSO semelhante ao player.)
         }
 
         return result;

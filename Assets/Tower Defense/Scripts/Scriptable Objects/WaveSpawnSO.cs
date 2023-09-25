@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using Sirenix.OdinInspector;
 
-[HideMonoScript]
-public class SpawnPointManager : MonoBehaviour
+[ManageableData]
+public class WaveSpawnSO : BaseOptionDataSO
 {
-    public AlignmentEnum alignment; 
+    [Required]
+    [ListDrawerSettings(Expanded = true)]
+    [PropertyTooltip("The group of agents to be spawned during the waves.")]
+    public AgentSO[] agents;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

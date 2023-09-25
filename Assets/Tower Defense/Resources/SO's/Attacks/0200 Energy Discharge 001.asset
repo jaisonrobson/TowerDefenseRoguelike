@@ -30,9 +30,9 @@ MonoBehaviour:
     type: 3}
   nature: {fileID: 11400000, guid: e62b8c95fe0d0984f80c896d0c52d39f, type: 2}
   formula: {fileID: 11400000, guid: bf3756c18a6b9fd478d9c0a2fb7ea0ec, type: 2}
-  cooldown: 5
+  cooldown: 0.5
   influenceOverAttackVelocity: 100
-  minimumAttackDistance: 3
+  minimumAttackDistance: 0
   maximumAttackDistance: 50
   onHitProbabilityStatusAffectors: []
   selfProbabilityStatusAffectors: []

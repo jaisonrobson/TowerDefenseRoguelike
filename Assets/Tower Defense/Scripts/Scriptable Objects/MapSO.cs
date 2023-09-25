@@ -58,13 +58,35 @@ public class MapSO : BaseOptionDataSO
     [PropertySpace(5f, 0f)]
     [GUIColor(0.9f, 0.9f, 0.9f)]
     [ListDrawerSettings(Expanded = true)]
-    [Tooltip("A matrix of simultaneous waves, in which, each matrix line represents a waves sequence list.")]
+    [Tooltip("each list represents a waves sequence list of the first fog.")]
     [Required]
-    [ValidateInput("Validate_MustHaveElements_DimensionOne_AlignedWaves", "[Aligned Waves] must have at least one sequence waves element.")]
-    [ValidateInput("Validate_MustHaveElements_DimensionTwo_AlignedWaves", "[Aligned Waves] All sequence waves line elements must have at least one wave in its sequence.")]
-    [ValidateInput("Validate_NotNull_AlignedWaves", "[Aligned Waves] All elements of the waves sequence must be valid.")]
-    [ValidateInput("Validate_MustHaveEqualAlignments_Sequence_AlignedWaves", "[Aligned Waves] All elements of the same sequence must be of the same alignment.")]
-    public AlignedWaveSO[][] alignedWaves;
+    [ValidateInput("Validate_MustHaveElements_FogOneWaves", "[Fog One Waves] must have at least one sequence waves element.")]
+    [ValidateInput("Validate_NotNull_FogOneWaves", "[Fog One Waves] All elements of the waves sequence must be valid.")]
+    [ValidateInput("Validate_MustHaveEqualAlignments_Sequence_FogOneWaves", "[Fog One Waves] All elements of the same sequence must be of the same alignment.")]
+    public AlignedWaveSO[] fogOneWaves;
+
+    [BoxGroup("Miscelanous", true)]
+    [PropertySpace(5f, 0f)]
+    [GUIColor(0.9f, 0.9f, 0.9f)]
+    [ListDrawerSettings(Expanded = true)]
+    [Tooltip("each list represents a waves sequence list of the second fog.")]
+    [Required]
+    [ValidateInput("Validate_MustHaveElements_FogSecondWaves", "[Fog Second Waves] must have at least one sequence waves element.")]
+    [ValidateInput("Validate_NotNull_FogSecondWaves", "[Fog Second Waves] All elements of the waves sequence must be valid.")]
+    [ValidateInput("Validate_MustHaveEqualAlignments_Sequence_FogSecondWaves", "[Fog Second Waves] All elements of the same sequence must be of the same alignment.")]
+    public AlignedWaveSO[] fogTwoWaves;
+
+    [BoxGroup("Miscelanous", true)]
+    [PropertySpace(5f, 0f)]
+    [GUIColor(0.9f, 0.9f, 0.9f)]
+    [ListDrawerSettings(Expanded = true)]
+    [Tooltip("each list represents a waves sequence list of the third fog.")]
+    [Required]
+    [ValidateInput("Validate_MustHaveElements_FogThirdWaves", "[Fog Third Waves] must have at least one sequence waves element.")]
+    [ValidateInput("Validate_NotNull_FogThirdWaves", "[Fog Third Waves] All elements of the waves sequence must be valid.")]
+    [ValidateInput("Validate_MustHaveEqualAlignments_Sequence_FogThirdWaves", "[Fog Third Waves] All elements of the same sequence must be of the same alignment.")]
+    public AlignedWaveSO[] fogThreeWaves;
+
 
     [BoxGroup("Miscelanous", true)]
     [PropertySpace(5f, 5f)]
@@ -89,52 +111,51 @@ public class MapSO : BaseOptionDataSO
     private bool Validate_MustHaveElements_PlayableAgents() { return playableAgents.Length > 0; }
     private bool Validate_MustHaveElements_PlayerEntities() { return playerEntities.Length > 0; }
     private bool Validate_MustBeStructure_PlayerEntities() { return playerEntities != null && playerEntities.All(pe => pe != null && pe.type == AgentTypeEnum.STRUCTURE); }
-    private bool Validate_MustHaveElements_DimensionOne_AlignedWaves() { return alignedWaves != null && alignedWaves.Length > 0; }
-    private bool Validate_MustHaveElements_DimensionTwo_AlignedWaves()
+    private bool Validate_MustHaveElements_FogOneWaves() { return fogOneWaves != null && fogOneWaves.Length > 0; }
+    private bool Validate_NotNull_FogOneWaves()
     {
-        if (alignedWaves == null || alignedWaves.Length <= 0) return true;
+        if (fogOneWaves == null || fogOneWaves.Length <= 0) return true;
 
-        return !alignedWaves.ToList().Any(aw => aw.Length <= 0);
+        return fogOneWaves.Any(element => element != null);
     }
-    private bool Validate_NotNull_AlignedWaves()
+    private bool Validate_MustHaveEqualAlignments_Sequence_FogOneWaves()
     {
-        if (alignedWaves == null || alignedWaves.Length <= 0 || alignedWaves.ToList().Any(aw => aw.Length <= 0)) return true;
+        if (fogOneWaves == null || fogOneWaves.Length <= 0) return true;
 
-        bool result = true;
+        AlignmentSO lastAlignmentFound = fogOneWaves.First().alignment;
 
-        alignedWaves.ToList().ForEach(aw =>
-        {
-            aw.ToList().ForEach(element =>
-            {
-                if (!element)
-                    result = false;
-            });
-        });
-
-        return result;
+        return fogOneWaves.All(el => el.alignment == lastAlignmentFound);
     }
-    private bool Validate_MustHaveEqualAlignments_Sequence_AlignedWaves()
+
+    private bool Validate_MustHaveElements_FogSecondWaves() { return fogTwoWaves != null && fogTwoWaves.Length > 0; }
+    private bool Validate_NotNull_FogSecondWaves()
     {
-        if (alignedWaves == null || alignedWaves.Length <= 0 || alignedWaves.ToList().Any(aw => aw.Length <= 0)) return true;
+        if (fogTwoWaves == null || fogTwoWaves.Length <= 0) return true;
 
-        bool result = true;
-        AlignmentSO lastAlignmentFound = null;
+        return fogTwoWaves.Any(element => element != null);
+    }
+    private bool Validate_MustHaveEqualAlignments_Sequence_FogSecondWaves()
+    {
+        if (fogTwoWaves == null || fogTwoWaves.Length <= 0) return true;
 
-        alignedWaves.ToList().ForEach(aw =>
-        {
-            lastAlignmentFound = aw.First().alignment;
+        AlignmentSO lastAlignmentFound = fogTwoWaves.First().alignment;
 
-            aw.ToList().ForEach(element =>
-            {
-                if (!element)
-                    return;
+        return fogTwoWaves.All(el => el.alignment == lastAlignmentFound);
+    }
+    private bool Validate_MustHaveElements_FogThirdWaves() { return fogThreeWaves != null && fogThreeWaves.Length > 0; }
+    private bool Validate_NotNull_FogThirdWaves()
+    {
+        if (fogThreeWaves == null || fogThreeWaves.Length <= 0) return true;
 
-                if (element.alignment != lastAlignmentFound)
-                    result = false;
-            });
-        });
+        return fogThreeWaves.Any(element => element != null);
+    }
+    private bool Validate_MustHaveEqualAlignments_Sequence_FogThirdWaves()
+    {
+        if (fogThreeWaves == null || fogThreeWaves.Length <= 0) return true;
 
-        return result;
+        AlignmentSO lastAlignmentFound = fogThreeWaves.First().alignment;
+
+        return fogThreeWaves.All(el => el.alignment == lastAlignmentFound);
     }
     private bool Validate_MustHaveElements_AlignmentsOpponents() { return alignmentsOpponents.Length > 0; }
     private bool Validate_NotEqualElements_AlignmentsOpponents()
@@ -169,10 +190,20 @@ public class MapSO : BaseOptionDataSO
 
         List<AlignmentEnum> alignedWavesAligments = new List<AlignmentEnum>();
 
-        for (int i = 0; i< alignedWaves.Length; i++)
-            for (int j = 0; j < alignedWaves[i].Length; j++)
-                if (!alignedWavesAligments.Contains(alignedWaves[i][j].alignment.alignment))
-                    alignedWavesAligments.Add(alignedWaves[i][j].alignment.alignment);
+        fogOneWaves.ToList().ForEach(el => {
+            if (alignedWavesAligments.All(al => el.alignment.alignment != al))
+                alignedWavesAligments.Add(el.alignment.alignment);
+        });
+
+        fogTwoWaves.ToList().ForEach(el => {
+            if (alignedWavesAligments.All(al => el.alignment.alignment != al))
+                alignedWavesAligments.Add(el.alignment.alignment);
+        });
+
+        fogThreeWaves.ToList().ForEach(el => {
+            if (alignedWavesAligments.All(al => el.alignment.alignment != al))
+                alignedWavesAligments.Add(el.alignment.alignment);
+        });            
 
         bool result = true;
 

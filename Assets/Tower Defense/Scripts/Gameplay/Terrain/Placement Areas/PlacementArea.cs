@@ -53,7 +53,6 @@ public class PlacementArea : MonoBehaviour
 
             if (!Raycasting.IsHitEmpty(hit) && hit.collider.gameObject == gameObject)
             {
-                Debug.Log(GetComponent<PlacementArea>());
                 AgentPlacementController.instance.CurrentPlacementArea = GetComponent<PlacementArea>();
                 OverlayInterfaceManager.instance.OpenAgentPlacementPanel();
             }

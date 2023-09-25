@@ -12,7 +12,14 @@ public class AlignedWaveSO : BaseOptionDataSO
 	public AlignmentSO alignment;
 
 	[Required]
-	public WaveSO wave;
+	[ListDrawerSettings(Expanded = true)]
+	[ValidateInput("Validate_MustHaveElements_Waves", "Waves must have at least one element.")]
+	public WaveSO[] waves;
+
+
+	// (Validation) Methods [START]
+	private bool Validate_MustHaveElements_Waves() { return waves != null && waves.Length > 0; }
+	// (Validation) Methods [END]
 }
 
 ////////////////////////////////////////////////////////////////////////////////

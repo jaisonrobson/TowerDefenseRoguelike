@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2af8432f0d6fc4cbbbbcbc4d0e1ed9, type: 3}
-  m_Name: 0001 Alignment 001 Wave 001
+  m_Name: 0001 Alignment 002 Waves 001
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,8 +22,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   jokerHiddenTitleField: 
-  assetPath: Assets/Tower Defense/Resources/SO's/Aligned Waves/Alignment 001 Wave
-    001.asset
-  newName: 0001 Alignment 001 Wave 001
-  alignment: {fileID: 11400000, guid: 42320215e4f4f594995739e465c3bee5, type: 2}
-  wave: {fileID: 11400000, guid: 793f206c0d409144eb0262bb9f8a0219, type: 2}
+  assetPath: Assets/Tower Defense/Resources/SO's/Aligned Waves/0001 Alignment 002
+    Wave 001.asset
+  newName: 0001 Alignment 002 Waves 001
+  alignment: {fileID: 11400000, guid: f0c47d80a9552f344b6d14061c69bbc2, type: 2}
+  waves:
+  - {fileID: 11400000, guid: 793f206c0d409144eb0262bb9f8a0219, type: 2}
+  - {fileID: 11400000, guid: 1882a681e97c88d4194572034c521a3b, type: 2}

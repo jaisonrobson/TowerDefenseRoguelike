@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7023808a96f25f94f8eb801917973fe3, type: 3}
-  m_Name: 0002 Orcs 02 Wave 01
+  m_Name: 0003 Orcs Wave 03
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,19 +22,13 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   jokerHiddenTitleField: 
-  assetPath: Assets/Tower Defense/Resources/SO's/Waves/0002 Orcs 02 Wave 02.asset
-  newName: 0002 Orcs 02 Wave 01
-  agents:
-  - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
-  - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
-  - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
-  - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
-  - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
-  - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
+  assetPath: Assets/Tower Defense/Resources/SO's/Waves/0003 Orcs 02 Wave 02.asset
+  newName: 0003 Orcs Wave 03
+  agentsGroup:
+  - {fileID: 11400000, guid: ff43ee97aa4003e448186be884cfe980, type: 2}
+  - {fileID: 11400000, guid: ff43ee97aa4003e448186be884cfe980, type: 2}
+  - {fileID: 11400000, guid: ff43ee97aa4003e448186be884cfe980, type: 2}
   spawnTimes:
-  - 30
-  - 35
-  - 40
-  - 43
-  - 47
-  - 50
+  - 5
+  - 10
+  - 15

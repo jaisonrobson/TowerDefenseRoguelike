@@ -16,10 +16,10 @@ public class WaveSO : BaseOptionDataSO
     [VerticalGroup("Box1/split/left")]
     [Required]
     [ListDrawerSettings(Expanded = true)]
-    [PropertyTooltip("The agents to be spawned during the waves.")]
+    [PropertyTooltip("The groups of agents to be spawned during the waves.")]
     [OnCollectionChanged(Before = "Before_CollectionChange_Agents")]
     [ValidateInput("Validate_MustHaveElements_Agents", "Agents must have at least one element.")]
-    public AgentSO[] agents;
+    public WaveSpawnSO[] agentsGroup;
 
     [VerticalGroup("Box1/split/right")]
     [Required]
@@ -53,13 +53,13 @@ public class WaveSO : BaseOptionDataSO
         switch (info.ChangeType)
         {
             case CollectionChangeType.Add:
-                agents = agents.Append(null).ToArray();
+                agentsGroup = agentsGroup.Append(null).ToArray();
                 break;
             case CollectionChangeType.Insert:
-                agents = agents.Append(null).ToArray();
+                agentsGroup = agentsGroup.Append(null).ToArray();
                 break;
             case CollectionChangeType.RemoveIndex:
-                agents = agents.Where((value, index) => index != info.Index).ToArray();
+                agentsGroup = agentsGroup.Where((value, index) => index != info.Index).ToArray();
                 break;
         }
     }
@@ -68,7 +68,7 @@ public class WaveSO : BaseOptionDataSO
 
 
     // Validation Methods [START]
-    private bool Validate_MustHaveElements_Agents() { return agents.Length > 0; }
+    private bool Validate_MustHaveElements_Agents() { return agentsGroup.Length > 0; }
     private bool Validate_MustHaveElements_Spawns() { return spawnTimes.Length > 0; }
     // Validation Methods [END]
 }

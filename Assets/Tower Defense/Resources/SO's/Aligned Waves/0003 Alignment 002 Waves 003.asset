@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7023808a96f25f94f8eb801917973fe3, type: 3}
-  m_Name: 0004 Orcs 01 Wave 02
+  m_Script: {fileID: 11500000, guid: 8e2af8432f0d6fc4cbbbbcbc4d0e1ed9, type: 3}
+  m_Name: 0003 Alignment 002 Waves 003
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,9 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   jokerHiddenTitleField: 
-  assetPath: 
-  newName: 
-  agents:
-  - {fileID: 11400000, guid: e6ff25750718e81409b44e7770bf3839, type: 2}
-  spawnTimes:
-  - 0
+  assetPath: Assets/Tower Defense/Resources/SO's/Aligned Waves/0003 Alignment 002
+    Wave 003.asset
+  newName: 0003 Alignment 002 Waves 003
+  alignment: {fileID: 11400000, guid: f0c47d80a9552f344b6d14061c69bbc2, type: 2}
+  waves:
+  - {fileID: 11400000, guid: 06e6a93c2d10ccf4c85a21a513acfe6c, type: 2}

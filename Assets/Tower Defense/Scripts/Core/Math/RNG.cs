@@ -55,6 +55,30 @@ namespace Core.Math
         {
             return new UnityEngine.Vector3(Float(minX, maxX), Float(minY, maxY), Float(minZ, maxZ));
         }
+
+        public static UnityEngine.Vector3 GetRandomPositionInTorus(float ringRadius, float wallRadius)
+        {
+            // get a random angle around the ring
+            //float rndAngle = UnityEngine.Random.value * 6.28f; // use radians, saves converting degrees to radians
+            UnityEngine.Random.InitState(Int(0, 99));
+
+            float rndAngle = UnityEngine.Random.rotation.eulerAngles.y;
+
+            // determine position
+            float cX = UnityEngine.Mathf.Sin(rndAngle);
+            float cZ = UnityEngine.Mathf.Cos(rndAngle);
+
+            UnityEngine.Vector3 ringPos = new UnityEngine.Vector3(cX, 0, cZ);
+            ringPos *= ringRadius;
+
+            // At any point around the center of the ring
+            // a sphere of radius the same as the wallRadius will fit exactly into the torus.
+            // Simply get a random point in a sphere of radius wallRadius,
+            // then add that to the random center point
+            UnityEngine.Vector3 sPos = UnityEngine.Random.insideUnitSphere * wallRadius;
+
+            return (ringPos + sPos);
+        }
     }
 }
 
