@@ -17,6 +17,8 @@ public class PlacementArea : MonoBehaviour
     // Public (Variables) [END]
 
     // Private (Variables) [START]
+    [SerializeField]
+    [HideInEditorMode]
     private Agent currentOccupyingAgent;
     // Private (Variables) [END]
 
@@ -35,7 +37,6 @@ public class PlacementArea : MonoBehaviour
         HandlePlacementAreaVisibility();
     }
     // (Unity) Methods [END]
-
 
     // Private (Methods) [START]
     private void InitializeVariables()
@@ -74,7 +75,6 @@ public class PlacementArea : MonoBehaviour
     // Private (Methods) [END]
 
     // Public (Methods) [START]
-
     // Public (Methods) [END]
 }
 

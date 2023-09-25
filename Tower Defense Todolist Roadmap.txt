@@ -18,6 +18,11 @@ LEGENDA:
 (X) O jogo não sera mais em varios niveis/mapas, mas apenas um mapa onde o jogador tera que lidar com varios aspectos de rejogabilidade/roguelike/aleatoriedade/rng.
 (X) Alterar o mapa e a area jogavel para serem redondos/circulares.
 
+(X) Fazer com que os inimigos nao tenham mais como alvo as estruturas/torres (com excecao da principal Heroi)
+(X) Fazer com que os inimigos nao ataquem mais a estrutura principal, mas sim explodam "sumam" e descontem o damage da vida do heroi apenas uma vez ao sumir.
+( ) Fazer com que as areas construiveis de fogs especificas so aparecam quando seu nivel de fog for ativado.
+(X) Fazer com que ao evoluir uma torre, a sua area construivel nao apareca como disponivel para construcao.
+
 ( ) Inicialmente so havera apenas o heroi no mapa que o jogador selecionou na tela de lobby.
 ( ) O heroi possuira habilidades ativas, que poderao ser usadas em tempo real, para atacar os inimigos.
 ( ) Cada heroi possuira habilidades diferentes.
@@ -34,7 +39,7 @@ LEGENDA:
 (X) Fazer com que ao selecionar o ponto, uma interface com todas as torres possiveis de construcao, se abra. (essa interface deve informar o nome e algumas estatisticas de cada torre.)
 
 ( ) Fazer com que o jogador tenha um nivel e experiencia
-( ) Fazer com que ao subir de nivel o jogador possa escolher um item pra ajudar durante a gameplay/run
+( ) Fazer com que ao subir de nivel o jogador possa escolher um item pra ajudar durante a gameplay/run				
 
 ( ) 3 areas de construcao perto do heroi para torres de ataque (fog 1)
 ( ) 3 areas de construcao para catalisadores (fog 2)

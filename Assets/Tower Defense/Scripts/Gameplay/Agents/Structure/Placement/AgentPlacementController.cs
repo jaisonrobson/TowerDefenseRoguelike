@@ -62,8 +62,7 @@ public class AgentPlacementController : Singleton<AgentPlacementController>
         newAgent.transform.position = currentPlacementArea.transform.position - new Vector3(0, 5f, 0);
         newAgent.GetComponent<Agent>().Alignment = MapManager.instance.map.playerAlignment.alignment;
         newAgent.GetComponent<PlayableStructure>().PlaceStructure(CurrentPlacementArea);
-
-        currentPlacementArea.CurrentOccupyingAgent = newAgent.GetComponent<Agent>();
+        
         currentPlacementArea = null;
     }
     public bool CanBuyAgent(PlayableAgentSO pAgent) => PlayerManager.instance.CanDecreasePoints(pAgent.cost);

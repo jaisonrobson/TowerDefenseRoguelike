@@ -43,7 +43,7 @@ public class AgentEnemyDetectionColliderManager : MonoBehaviour
     {
         if (IsSelfGameObjectCollider(other.transform)) return;
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Creature") || other.gameObject.layer == LayerMask.NameToLayer("Structure"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Creature"))
         {
             Agent otherAgent = other.gameObject.GetComponentInParent<Agent>();
 
@@ -69,7 +69,7 @@ public class AgentEnemyDetectionColliderManager : MonoBehaviour
     {
         if (IsSelfGameObjectCollider(other.transform)) return;
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Creature") || other.gameObject.layer == LayerMask.NameToLayer("Structure"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Creature"))
         {
             Agent otherAgent = other.gameObject.GetComponentInParent<Agent>(true);
 

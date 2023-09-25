@@ -172,7 +172,12 @@ public abstract class AgentFsmAi : MonoBehaviour
                         Agent enemyAgent = agent.GetActualEnemyAgent();
 
                         if (enemyAgent != null)
+                        {
                             Attacking.InvokeAttack(timedAttacks[i].attack, agent, enemyAgent);
+
+                            if (agent.IsWaveCreature)
+                                agent.PoolAgent();
+                        }
                     }
                 }
 

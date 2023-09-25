@@ -116,6 +116,8 @@ public class PlayableStructure : Structure
         isPlaced = true;
         placementArea = pPlacementArea;
 
+        pPlacementArea.CurrentOccupyingAgent = this;
+
         DoSpawnFXs();
     }
     public override void PoolRetrievalAction(Poolable poolable)

@@ -128,7 +128,7 @@ MonoBehaviour:
   damage: 3
   attackVelocity: 1
   attackRange: 1.5
-  velocity: 10
+  velocity: 3
   visibilityArea: 10
   evasion: {x: 10, y: 25}
   evolutionTree:

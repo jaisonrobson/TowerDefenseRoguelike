@@ -26,5 +26,9 @@ MonoBehaviour:
   newName: 0004 Orcs Wave 04
   agentsGroup:
   - {fileID: 11400000, guid: ff43ee97aa4003e448186be884cfe980, type: 2}
+  - {fileID: 11400000, guid: ff43ee97aa4003e448186be884cfe980, type: 2}
+  - {fileID: 11400000, guid: ff43ee97aa4003e448186be884cfe980, type: 2}
   spawnTimes:
+  - 0
+  - 5
   - 10

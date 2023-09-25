@@ -154,7 +154,7 @@ MonoBehaviour:
   damage: 6
   attackVelocity: 5
   attackRange: 1.5
-  velocity: 10
+  velocity: 4
   visibilityArea: 15
   evasion: {x: 0, y: 25}
   evolutionTree: []

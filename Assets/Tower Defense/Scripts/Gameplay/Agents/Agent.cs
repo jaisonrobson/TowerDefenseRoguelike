@@ -244,6 +244,7 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public bool IsAgentUnderStatusHealblock { get { return affectingStatuses.Any(sa => sa.statusAffectorSO.status.status == StatusEnum.HEALBLOCK); } }
     public bool IsAgentUnderStatusTaunt { get { return affectingStatuses.Any(sa => sa.statusAffectorSO.status.status == StatusEnum.TAUNT); } }
     public bool IsCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE; } }
+    public bool IsWaveCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE && master == null; } }
     public bool IsStructure { get { return GetAgent().type == AgentTypeEnum.STRUCTURE; } }
     public int OnDieExperience { get { return actualExperience + GetAgent().experienceOnDie; } }
     public bool CanEvolve { get { return actualExperience == experienceToEvolve && GetAgent() != null && GetAgent().evolutionTree != null && GetAgent().evolutionTree.Count > 0; } }
