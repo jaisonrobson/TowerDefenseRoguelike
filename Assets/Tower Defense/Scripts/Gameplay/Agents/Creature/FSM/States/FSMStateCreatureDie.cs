@@ -26,8 +26,6 @@ public class FSMStateCreatureDie : FiniteStateMachine
     // Public (Methods) [START]
     public override void Enter()
     {
-        anim.SetTrigger("isDying");
-
         pathfinding.canMove = false;
         pathfinding.enabled = false;
 

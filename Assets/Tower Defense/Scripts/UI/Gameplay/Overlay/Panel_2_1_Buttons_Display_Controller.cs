@@ -10,8 +10,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
     [Required]
     public GameObject flagButton;
     [Required]
-    public GameObject levelUpButton;
-    [Required]
     public GameObject statisticsButton;
     [Required]
     public GameObject trashButton;
@@ -29,7 +27,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
     private void HandleButtonsDisplay()
     {
         bool canDisplayFlagButtton = false;
-        bool canDisplayLevelUpButton = false;
         bool canDisplayStatisticsButton = false;
         bool canDisplayThrashButton = false;
 
@@ -40,7 +37,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
             if (ps != null)
             {
                 canDisplayFlagButtton = true;
-                canDisplayLevelUpButton = ps.HasEvolution;
                 canDisplayStatisticsButton = true;
                 canDisplayThrashButton = true;
             }
@@ -52,7 +48,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
         }
 
         flagButton.SetActive(canDisplayFlagButtton);
-        levelUpButton.SetActive(canDisplayLevelUpButton);
         statisticsButton.SetActive(canDisplayStatisticsButton);
         trashButton.SetActive(canDisplayThrashButton);
     }

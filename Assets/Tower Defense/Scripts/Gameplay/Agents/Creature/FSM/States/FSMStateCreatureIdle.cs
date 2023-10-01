@@ -27,8 +27,6 @@ public class FSMStateCreatureIdle : FiniteStateMachine
     // Public (Methods) [START]
     public override void Enter()
     {
-        anim.SetTrigger("isIdle");
-
         base.Enter();
     }
     /// <summary>
@@ -77,8 +75,6 @@ public class FSMStateCreatureIdle : FiniteStateMachine
     }
     public override void Exit()
     {
-        anim.ResetTrigger("isIdle");
-
         base.Exit();
     }
     // Public (Methods) [END]

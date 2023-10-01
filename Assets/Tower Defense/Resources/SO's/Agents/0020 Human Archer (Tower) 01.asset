@@ -134,6 +134,5 @@ MonoBehaviour:
   evolutionTree:
   - {fileID: 11400000, guid: d282e64abeaf8aa49940be7f08d12411, type: 2}
   attacks: []
-  subspawns:
-  - {fileID: 11400000, guid: b62856f7943f35c41bb968fa6971646a, type: 2}
+  subspawns: []
   statusImmunities: []

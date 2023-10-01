@@ -12,12 +12,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
     // Public (Variables) [START]
     [FoldoutGroup("Quantitative UI Information")]
     [Required]
-    public BetterSlider experienceSlider;
-    [FoldoutGroup("Quantitative UI Information")]
-    [Required]
-    public BetterText experienceText;
-    [FoldoutGroup("Quantitative UI Information")]
-    [Required]
     public BetterSlider healthSlider;
     [FoldoutGroup("Quantitative UI Information")]
     [Required]
@@ -43,9 +37,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
     [FoldoutGroup("Quantitative UI Information")]
     [Required]
     public BetterText spawnQuantityText;
-    [FoldoutGroup("UI Items")]
-    [Required]
-    public GameObject experienceItem;
     [FoldoutGroup("UI Items")]
     [Required]
     public GameObject healthItem;
@@ -89,11 +80,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
 
         if (agt != null)
         {
-            experienceSlider.minValue = 0f;
-            experienceSlider.value = agt.ActualExperience;
-            experienceSlider.maxValue = agt.ExperienceToEvolve;
-            experienceText.text = string.Format("{0:0.##}", agt.ActualExperience) + " / " + string.Format("{0:0.##}", agt.ExperienceToEvolve);
-
             healthSlider.minValue = 0f;
             healthSlider.value = agt.ActualHealth;
             healthSlider.maxValue = agt.MaxHealth;
@@ -125,7 +111,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
             switch (agt.GetAgent().type)
             {
                 case AgentTypeEnum.CREATURE:
-                    experienceItem.SetActive(true);
                     healthItem.SetActive(true);
 
                     damageItem.SetActive(afai.IsAggressive);
@@ -137,7 +122,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
                     spawnQuantityItem.SetActive(agt.SubSpawns.Count > 0);
                     break;
                 case AgentTypeEnum.STRUCTURE:
-                    experienceItem.SetActive(true);
                     healthItem.SetActive(true);
 
                     damageItem.SetActive(afai.IsAggressive);

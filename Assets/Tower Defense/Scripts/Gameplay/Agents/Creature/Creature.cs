@@ -40,8 +40,6 @@ public class Creature : Agent
     protected override void Update()
     {
         base.Update();
-
-        HandleCreatureEvolution();
     }
     // Unity Methods [END]
 
@@ -58,13 +56,6 @@ public class Creature : Agent
             aiPath.maxSpeed = Velocity;
             aiPath.maxAcceleration = 1f + Velocity * 0.25f;
             aiPath.slowdownDistance = 1f + Velocity;
-        }
-    }
-    private void HandleCreatureEvolution()
-    {
-        if (CanEvolve && Master == null)
-        {
-            CreatureEvolutionManager.instance.TryToEvolveCreature(this);
         }
     }
     // Private Methods [END]

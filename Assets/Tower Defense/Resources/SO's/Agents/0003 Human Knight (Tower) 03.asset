@@ -162,6 +162,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35c8ba34b230fe74ea20b5191e0ed7d8, type: 2}
   attacks:
   - {fileID: 11400000, guid: ee527f0a67e809846815e8a4fcc28fb7, type: 2}
-  subspawns:
-  - {fileID: 11400000, guid: 33513a4189a0fef4888f5246a6bf867d, type: 2}
+  subspawns: []
   statusImmunities: []

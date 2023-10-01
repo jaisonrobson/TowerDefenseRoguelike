@@ -159,6 +159,5 @@ MonoBehaviour:
   evasion: {x: 0, y: 10}
   evolutionTree: []
   attacks: []
-  subspawns:
-  - {fileID: 11400000, guid: 09fa88ad0f9cc214991731e2e1dfa11e, type: 2}
+  subspawns: []
   statusImmunities: []

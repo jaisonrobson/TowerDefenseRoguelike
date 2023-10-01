@@ -28,8 +28,6 @@ public class FSMStateCreatureAttack : FiniteStateMachine
     // Public (Methods) [START]
     public override void Enter()
     {
-        anim.SetTrigger("isAttacking");
-
         base.Enter();
     }
     /// <summary>
@@ -82,8 +80,6 @@ public class FSMStateCreatureAttack : FiniteStateMachine
     }
     public override void Exit()
     {
-        anim.ResetTrigger("isAttacking");
-
         base.Exit();
     }
     // Public (Methods) [END]

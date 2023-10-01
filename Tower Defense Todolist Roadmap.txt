@@ -7,7 +7,7 @@ LEGENDA:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ( ) Procurar um shader para servir de dissolução dos destroços das estruturas e corpos dos agentes apos morrerem. (Dissolve Shader, Dithering.) ou verificar como a remoção/transição de meshes ocorre nos jogos.
-( ) Criar um sistema de disponibilidade de evolucao de torres para o jogador de acordo com o mapa (ex: algumas torres nao estaram desbloqueadas para uso naquele mapa, nem por evolucao, ou evolucoes especificas).
+(-) Criar um sistema de disponibilidade de evolucao de torres para o jogador de acordo com o mapa (ex: algumas torres nao estaram desbloqueadas para uso naquele mapa, nem por evolucao, ou evolucoes especificas).
 (X) Ajustar uma area horizontal dirigida na interface world space de cada agente para exibir informacoes de status do agente
 ( ) Ajustar uma area horizontal dirigida na interface world space de cada agente para exibir informacoes de disponibilidade de recursos (evolução, etc.)
 
@@ -20,10 +20,11 @@ LEGENDA:
 
 (X) Fazer com que os inimigos nao tenham mais como alvo as estruturas/torres (com excecao da principal Heroi)
 (X) Fazer com que os inimigos nao ataquem mais a estrutura principal, mas sim explodam "sumam" e descontem o damage da vida do heroi apenas uma vez ao sumir.
-( ) Fazer com que as areas construiveis de fogs especificas so aparecam quando seu nivel de fog for ativado.
+(X) Fazer com que as areas construiveis de fogs especificas so aparecam quando seu nivel de fog for ativado.
 (X) Fazer com que ao evoluir uma torre, a sua area construivel nao apareca como disponivel para construcao.
 
 ( ) Inicialmente so havera apenas o heroi no mapa que o jogador selecionou na tela de lobby.
+( ) Fazer uma hub de selecao do heroi nos menus iniciais antes da run/gameplay
 ( ) O heroi possuira habilidades ativas, que poderao ser usadas em tempo real, para atacar os inimigos.
 ( ) Cada heroi possuira habilidades diferentes.
 (X) As estruturas principais demarcaram a condição de derrota (caso ele perda o heroi, o jogo acaba)
@@ -38,17 +39,39 @@ LEGENDA:
 (X) Não havera mais areas de construção livre, mas sim pontos pre-definidos em todas as fogs, onde cada ponto sera possivel escolher a torre que ocupara o mesmo.
 (X) Fazer com que ao selecionar o ponto, uma interface com todas as torres possiveis de construcao, se abra. (essa interface deve informar o nome e algumas estatisticas de cada torre.)
 
-( ) Fazer com que o jogador tenha um nivel e experiencia
-( ) Fazer com que ao subir de nivel o jogador possa escolher um item pra ajudar durante a gameplay/run				
+( ) Fazer com que ao subir de nivel o jogador possa escolher uma melhoria de heroi ajudar durante a gameplay/run
+(X) Fazer com que o jogador tenha um nivel e experiencia
+(X) Remover a experiencia propria das torres e dos agentes.
+(X) A experiencia proveniente de qualquer agente, vira diretamente para o jogador.
+( ) Existira uma pequena chance de drop do proximo item, onde cada monstro que o jogador matar vai aumentar um pouco essa chance, outros beneficios futuramente podem influenciar essa chance.
+( ) A cada item dropado a chance de drop e resetada para o valor inicial.
 
-( ) 3 areas de construcao perto do heroi para torres de ataque (fog 1)
-( ) 3 areas de construcao para catalisadores (fog 2)
+( ) Fazer um sistema de itens que sera apenas durante a run
+( ) O inventario, sera uma grid de 4x4 = 16 slots, onde todo item sera obrigatoriamente armazenado nesse inventario (consumiveis, nao consumiveis, etc.)
+( ) Se o jogador dropar um item e o inventario estiver cheio, o jogador tera 10s para decicidir se vai sacrificar um item no inventario e pegar o item novo.
+( ) O heroi vai possuir 2 slots para itens nao consumiveis
+( ) Cada torre tera um slot de item não consumivel
+( ) Desenvolver uma interface para representar o inventario, sendo que nela sera possivel arrastar entre os itens nao equipados, para os equipados.
+
+(X) Fazer com que a perspectiva da camera seja isometrica.
+(X) Fazer com que a camera fique apenas fixa no centro do mapa, mas com um zoom onde o mapa seja bem visto.
+(X) Fazer com que a camera possua movimentacao sem rotacao, mas manter ela isometrica.
+
+(X) 3 areas de construcao perto do heroi para torres de ataque (fog 1)
+(X) 3 areas de construcao para catalisadores (fog 2)
+
+
+(X) Remover mecanica de movimento dos agentes ao atacar estrutura para nao procurarem um canto aleatorio, mas atacarem a primeira area mais proxima.
+(X) Remover a mecanica de necessidade das animacoes "IDLE", "DEATH", "ATTACK" do codigo da IA dos agentes creatures
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+IDEIAS MAIS PRO FUTURO
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+( ) Fazer possiveis spawns aleatorios que podem acontecer nas waves (dar um jeito de inserir isso na centralizacao de dados)
+( ) Criar um sistema de path para as diferentes IA`s de pathfinding seguirem, onde alguns monstros seguiram pequenos caminhos predeterminados de forma sincronizada.
 
 * Perguntar se a wave deve acabar quando todos os inimigos daquela wave morrerem ou se as waves podem continuar tocando mesmo tendo os inimigos da anterior ainda vivos.
 
 
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 BUGS E VALIDAÇÕES:
-( ) Encontrado problema onde as vezes os agentes subspawns atacam os seus mestres logo antes de comecarem a atacar seus inimigos prioritarios. (Talvez o bug esteja no ActualGoal ou algo assim.) (Fazer uma verificacao se o objeto mestre for do mesmo alinhamento cancela o ataque.)
-( ) Encontrado bug quando houver apenas um inimigo vivo, e o mesmo evoluir, o jogo brevemente ira pensar que acabou porque ao evoluir o inimigo some por alguns instantes, e entao o jogo acha que nao existe mais inimigos vivos e encerra como jogador vitorioso.

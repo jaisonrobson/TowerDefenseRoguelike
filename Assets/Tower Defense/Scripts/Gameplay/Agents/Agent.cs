@@ -123,16 +123,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
     [ProgressBar(0.3f, 5f, 0.3f, 0.8f, 1f)]
     [GUIColor(0.3f, 0.8f, 1f, 1f)]
     private float attackVelocity = 0f;
-    private int experienceToEvolve = 0;
-    [TitleGroup("Agent Identity/Stats")]
-    [PropertyOrder(2)]
-    [ShowInInspector]
-    [HideInEditorMode]
-    [ReadOnly]
-    [LabelText("Experience")]
-    [GUIColor(1f, 0.8f, 0.4f, 1f)]
-    [ProgressBar(0, 100, MaxGetter = "ExperienceToEvolve", R = 1f, G = 0.8f, B = 0.4f)]
-    private int actualExperience = 0;
     [TitleGroup("Agent Identity/Stats")]
     [PropertyOrder(6)]
     [ShowInInspector]
@@ -222,8 +212,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public float Damage { get { return damage; } }
     public float Velocity { get { return velocity; } }
     public float AttackVelocity { get { return attackVelocity; } }
-    public int ExperienceToEvolve { get { return experienceToEvolve; } }
-    public float ActualExperience { get { return actualExperience; } }
     public float VisibilityArea { get { return visibilityArea; } }
     public float AttackRange { get { return attackRange; } }
     public Vector2Int Evasion { get { return evasion; } }
@@ -246,8 +234,7 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public bool IsCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE; } }
     public bool IsWaveCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE && master == null; } }
     public bool IsStructure { get { return GetAgent().type == AgentTypeEnum.STRUCTURE; } }
-    public int OnDieExperience { get { return actualExperience + GetAgent().experienceOnDie; } }
-    public bool CanEvolve { get { return actualExperience == experienceToEvolve && GetAgent() != null && GetAgent().evolutionTree != null && GetAgent().evolutionTree.Count > 0; } }
+    public int OnDieExperience { get { return GetAgent().experienceOnDie; } }
     public List<StatusEnum> NotAffectingStatuses { get { return Enumerable.Range(0, Enum.GetValues(typeof(StatusEnum)).Length).ToList().Where(status => affectingStatuses.All(sa => sa.statusAffectorSO.status.status != (StatusEnum)status)).Select(element => (StatusEnum)element).ToList(); } }
     public List<StatusEnum> AffectingStatuses { get { return affectingStatuses.Select(sa => sa.statusAffectorSO.status.status).ToList(); } }
     // Public (Properties) [END]
@@ -278,8 +265,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
         damage = GetAgent().damage;
         velocity = GetAgent().velocity;
         attackVelocity = GetAgent().attackVelocity;
-        experienceToEvolve = GetAgent().experienceToEvolve;
-        actualExperience = 0;
         visibilityArea = GetAgent().visibilityArea;
         attackRange = GetAgent().attackRange;
         evasion = GetAgent().evasion;
@@ -567,18 +552,11 @@ public abstract class Agent : MonoBehaviour, IPoolable
             Master?.OnReceiveExperience(newExperience);
         else
         {
-            int experienceToReceive = newExperience;
-
             if (Alignment == AlignmentManager.instance.PlayerAlignment.alignment)
             {
-                experienceToReceive = Mathf.FloorToInt(experienceToReceive / 2);
-
-                experienceToReceive = experienceToReceive == 0 ? 1 : experienceToReceive;
-
-                PlayerManager.instance.IncreasePoints(experienceToReceive);
+                PlayerManager.instance.IncreaseExperience(newExperience);
+                PlayerManager.instance.IncreasePoints(newExperience);
             }
-
-            actualExperience = Mathf.Clamp(actualExperience + experienceToReceive, actualExperience, ExperienceToEvolve);
         }
     }
     public Agent GetActualEnemyAgent()

@@ -55,14 +55,6 @@ public class WorldSpaceInterfaceManager : Singleton<WorldSpaceInterfaceManager>
     [Required]
     [AssetsOnly]
     [BoxGroup("Prefabs")]
-    [Title("Buttons")]
-    public GameObject buttonLevelUp;
-
-    [PropertySpace(5f)]
-
-    [Required]
-    [AssetsOnly]
-    [BoxGroup("Prefabs")]
     [Title("Horizontal Layouts")]
     public GameObject horizontalLayoutSmallStatuses;
 
@@ -114,7 +106,6 @@ public class WorldSpaceInterfaceManager : Singleton<WorldSpaceInterfaceManager>
         return result;
     }
 
-    public GameObject GetLevelUpButton() => buttonLevelUp;
     // Public (Methods) [END]
 }
 

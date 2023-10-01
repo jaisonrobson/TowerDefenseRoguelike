@@ -121,7 +121,7 @@ public class CreatureFsmAi : AgentFsmAi
                         isGettingDistanceFromTarget = false;
 
                         if (enemyAgent != null)
-                            pathfinding.destination = GetGoalDestination(enemyAgent.mainCollider.bounds, nearestPriorityEnemy.destination);
+                            pathfinding.destination = GetGoalDestination(enemyAgent.mainCollider.bounds);
                         else
                             pathfinding.destination = nearestPriorityEnemy.goal.transform.position;
                     }
@@ -146,7 +146,7 @@ public class CreatureFsmAi : AgentFsmAi
 
                     if (goalCollider != null)
                     {
-                        pathfinding.destination = GetGoalDestination(goalCollider.bounds, agent.MainGoals.First().destination);
+                        pathfinding.destination = GetGoalDestination(goalCollider.bounds);
                     }
                     else
                         pathfinding.destination = agent.MainGoals.First().goal.transform.position;
@@ -244,25 +244,22 @@ public class CreatureFsmAi : AgentFsmAi
 
         return result;
     }
-    private Vector3 GetGoalDestination(Bounds b, int choice)
+    private Vector3 GetGoalDestination(Bounds b)
     {
-        Vector3 result;
+        Vector3 result = b.min;
+        Vector3 aux;
+        
+        aux = new Vector3(b.max.x, 0f, b.max.z);
+        if (Vector3.Distance(gameObject.transform.position, result) > Vector3.Distance(gameObject.transform.position, aux))
+            result = aux;
 
-        switch (choice)
-        {
-            case 0:
-                result = new Vector3(b.max.x, 0f, b.max.z);
-                break;
-            case 1:
-                result = new Vector3(b.max.x, 0f, b.min.z);
-                break;
-            case 2:
-                result = new Vector3(b.min.x, 0f, b.max.z);
-                break;
-            default:
-                result = b.min;
-                break;
-        }
+        aux = new Vector3(b.max.x, 0f, b.min.z);
+        if (Vector3.Distance(gameObject.transform.position, result) > Vector3.Distance(gameObject.transform.position, aux))
+            result = aux;
+
+        aux = new Vector3(b.min.x, 0f, b.max.z);
+        if (Vector3.Distance(gameObject.transform.position, result) > Vector3.Distance(gameObject.transform.position, aux))
+            result = aux;
 
         return result;
     }

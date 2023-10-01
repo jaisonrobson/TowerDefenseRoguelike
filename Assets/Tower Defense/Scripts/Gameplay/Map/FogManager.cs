@@ -10,15 +10,27 @@ using Core.Math;
 public class FogManager : Singleton<FogManager>
 {
     // Public (Variables) [START]
+    [BoxGroup("Main", true)]
     [Required]
     [SceneObjectsOnly]
     public AnimationFogController fogOne;
+    [BoxGroup("Main")]
     [Required]
     [SceneObjectsOnly]
     public AnimationFogController fogTwo;
+    [BoxGroup("Main")]
     [Required]
     [SceneObjectsOnly]
     public AnimationFogController fogThree;
+    [BoxGroup("Extra", true)]
+    [ListDrawerSettings(Expanded = true)]
+    public List<GameObject> fogOneProps;
+    [BoxGroup("Extra")]
+    [ListDrawerSettings(Expanded = true)]
+    public List<GameObject> fogTwoProps;
+    [BoxGroup("Extra")]
+    [ListDrawerSettings(Expanded = true)]
+    public List<GameObject> fogThreeProps;
     // Public (Variables) [END]
 
     // Private (Variables) [START]
@@ -50,6 +62,18 @@ public class FogManager : Singleton<FogManager>
     private void InitializeVariables()
     {
         actualFogDiscoveryStage = 0;
+        if (fogOneProps == null)
+            fogOneProps = new List<GameObject>();
+
+        if (fogTwoProps == null)
+            fogTwoProps = new List<GameObject>();
+
+        if (fogThreeProps == null)
+            fogThreeProps = new List<GameObject>();
+
+        fogOneProps.ForEach(prp => prp.SetActive(false));
+        fogTwoProps.ForEach(prp => prp.SetActive(false));
+        fogThreeProps.ForEach(prp => prp.SetActive(false));
     }
     private void HandleFogVisibility()
     {
@@ -59,12 +83,15 @@ public class FogManager : Singleton<FogManager>
                 break;
             case 2:
                 fogOne.EndFog();
+                fogOneProps.ForEach(prp => prp.SetActive(true));
                 break;
             case 3:
                 fogTwo.EndFog();
+                fogTwoProps.ForEach(prp => prp.SetActive(true));
                 break;
             case 4:
                 fogThree.EndFog();
+                fogThreeProps.ForEach(prp => prp.SetActive(true));
                 break;
         }
     }
