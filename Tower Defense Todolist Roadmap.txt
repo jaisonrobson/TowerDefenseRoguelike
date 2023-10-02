@@ -23,7 +23,7 @@ LEGENDA:
 (X) Fazer com que as areas construiveis de fogs especificas so aparecam quando seu nivel de fog for ativado.
 (X) Fazer com que ao evoluir uma torre, a sua area construivel nao apareca como disponivel para construcao.
 
-( ) Inicialmente so havera apenas o heroi no mapa que o jogador selecionou na tela de lobby.
+(X) Inicialmente so havera apenas o heroi no mapa que o jogador selecionou na tela de lobby.
 ( ) Fazer uma hub de selecao do heroi nos menus iniciais antes da run/gameplay
 ( ) O heroi possuira habilidades ativas, que poderao ser usadas em tempo real, para atacar os inimigos.
 ( ) Cada heroi possuira habilidades diferentes.

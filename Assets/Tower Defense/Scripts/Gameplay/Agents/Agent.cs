@@ -210,7 +210,7 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public bool IsAgentUnderStatusHealblock { get { return affectingStatuses.Any(sa => sa.statusAffectorSO.status.status == StatusEnum.HEALBLOCK); } }
     public bool IsAgentUnderStatusTaunt { get { return affectingStatuses.Any(sa => sa.statusAffectorSO.status.status == StatusEnum.TAUNT); } }
     public bool IsCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE; } }
-    public bool IsWaveCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE && master == null; } }
+    public bool IsWaveCreature { get { return GetAgent().type == AgentTypeEnum.CREATURE && master == null && GetAgent().subtype != AgentSubTypeEnum.HERO; } }
     public bool IsStructure { get { return GetAgent().type == AgentTypeEnum.STRUCTURE; } }
     public int OnDieExperience { get { return GetAgent().experienceOnDie; } }
     public List<StatusEnum> NotAffectingStatuses { get { return Enumerable.Range(0, Enum.GetValues(typeof(StatusEnum)).Length).ToList().Where(status => affectingStatuses.All(sa => sa.statusAffectorSO.status.status != (StatusEnum)status)).Select(element => (StatusEnum)element).ToList(); } }

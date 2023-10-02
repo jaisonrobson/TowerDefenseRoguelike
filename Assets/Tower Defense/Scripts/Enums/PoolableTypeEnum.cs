@@ -26,6 +26,7 @@ public enum PoolableTypeEnum
     SFX_MISCELANOUS,
     UI_BUTTON,
     UI_HORIZONTALLAYOUT,
+    AGENT_HERO,
 }
 
 ////////////////////////////////////////////////////////////////////////////////

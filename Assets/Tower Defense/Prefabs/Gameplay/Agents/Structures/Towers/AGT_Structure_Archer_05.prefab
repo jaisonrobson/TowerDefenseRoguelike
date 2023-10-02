@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCollider: {fileID: 3585420293227557893}
-  goal: 3
+  goal: 1
   attacksOrigins: []
   agent: {fileID: 11400000, guid: 8f19638f5da8a4f40b4f206ba22c8dfd, type: 2}
   structure: {fileID: 1986624884857302129}

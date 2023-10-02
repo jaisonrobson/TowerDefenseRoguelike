@@ -68,7 +68,7 @@ public class Creature : Agent
     public override void PoolRetrievalAction(Poolable poolable)
     {
         gameObject.GetComponent<AIPath>().enabled = true;
-        gameObject.GetComponent<AIPath>().canMove = true;
+        gameObject.GetComponent<AIPath>().canMove = agent.isMovable;
 
         base.PoolRetrievalAction(poolable);
     }

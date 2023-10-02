@@ -20,7 +20,7 @@ public class OverlayInterfaceController : MonoBehaviour
     }
     private void HandlePanel_2_2_Visibility()
     {
-        HandlePanel_Dismissing(OverlayInterfaceManager.instance.panel_2_2);
+        HandlePanel_Any_Panel_Visibility(OverlayInterfaceManager.instance.panel_2_2);
     }
     private void HandlePanel_Dismissing(GameObject pPanel)
     {
