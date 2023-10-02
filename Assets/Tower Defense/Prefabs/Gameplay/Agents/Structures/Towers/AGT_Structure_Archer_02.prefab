@@ -142,7 +142,6 @@ GameObject:
   - component: {fileID: 4672184062230180332}
   - component: {fileID: 8485023488189798779}
   - component: {fileID: 5012219646773798609}
-  - component: {fileID: 5651400122744294687}
   - component: {fileID: 3034134584064729238}
   - component: {fileID: 6564384736346351161}
   m_Layer: 6
@@ -188,8 +187,6 @@ MonoBehaviour:
   agent: {fileID: 11400000, guid: d282e64abeaf8aa49940be7f08d12411, type: 2}
   structure: {fileID: 5585411428854300634}
   ghost: {fileID: 4667639931494993825}
-  flagPrefab: {fileID: 7610689757914200102, guid: fb92f925acbde27459bf03ea8e46a445,
-    type: 3}
 --- !u!114 &5415028582852190894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,22 +278,6 @@ MonoBehaviour:
     m_Bits: 4096
   areaDisplayMesh: {fileID: 5268025629903592654, guid: 237fd1f6c027ee241a5049f681d102e8,
     type: 3}
---- !u!114 &5651400122744294687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731601980460074127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2eb89bf5bced8448a1d5850f06c3f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oEvent: {fileID: 0}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3034134584064729238
 MonoBehaviour:
   m_ObjectHideFlags: 0

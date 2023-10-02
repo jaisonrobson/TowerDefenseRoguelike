@@ -78,13 +78,7 @@ public class AgentSO : BaseOptionDataSO
     //Stats
     [HorizontalGroup("base/tr_1/tr_2", PaddingRight = 10, LabelWidth = 130)]
 
-
     [BoxGroup("base/tr_1/tr_2/td_1", LabelText = "Stats")]
-    [Min(0)]
-    [GUIColor(1f, 0.8f, 0.4f, 1f)]
-    public int experienceToEvolve;
-
-    [BoxGroup("base/tr_1/tr_2/td_1")]
     [Min(0)]
     [GUIColor(1f, 0.8f, 0.4f, 1f)]
     public int experienceOnDie;
@@ -163,12 +157,6 @@ public class AgentSO : BaseOptionDataSO
     [Required]
     [ValidateInput("Validate_NotDistant_Attacks", "There is an impossible attack in the list because of its distance requirements against the agent distance range.")]
     public List<AttackSO> attacks;
-
-    [BoxGroup("third/tr_1/td_1")]
-    [ListDrawerSettings(Expanded = true)]
-    [PropertyTooltip("This list represents the creatures which can be spawned by this own agent.\n\nCan be null if this agent does not spawn creatures.")]
-    [Required]
-    public List<SubSpawnSO> subspawns;
 
     [BoxGroup("third/tr_1/td_1")]
     [ListDrawerSettings(Expanded = true)]

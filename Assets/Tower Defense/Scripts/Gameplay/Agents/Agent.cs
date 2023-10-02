@@ -26,21 +26,6 @@ public struct MainGoal
 }
 
 [Serializable]
-public struct SubSpawn
-{
-    public SubSpawnSO subSpawn;
-    public float timeToNextSpawn;
-    public List<GameObject> spawnedAgents;
-
-    public SubSpawn(SubSpawnSO pSubSpawn, float pTimeToNextSpawn = 0f)
-    {
-        spawnedAgents = new List<GameObject>();
-        timeToNextSpawn = pTimeToNextSpawn;
-        subSpawn = pSubSpawn;
-    }
-}
-
-[Serializable]
 public struct AttackOrigin
 {
     public AttackSO attack;
@@ -171,12 +156,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
     [HideInEditorMode]
     [ReadOnly]
     private PriorityGoal[] priorityGoals = new PriorityGoal[0];
-    [TitleGroup("Agent Identity/Spawning")]
-    [PropertyOrder(3)]
-    [ShowInInspector]
-    [HideInEditorMode]
-    [ReadOnly]
-    private List<SubSpawn> subSpawns;
     [TitleGroup("Agent Identity/Affectors", Order = 3)]
     [PropertyOrder(9)]
     [ShowInInspector]
@@ -217,7 +196,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public Vector2Int Evasion { get { return evasion; } }
     public Agent ActualGoal { get { FilterActualGoal(); return actualGoal; } set { actualGoal = value; } }
     public AlignmentEnum Alignment { get { return alignment; } set { alignment = value; } }
-    public List<SubSpawn> SubSpawns { get { return subSpawns; } set { subSpawns = value; } }
     public List<PriorityGoal> PriorityGoals { get { FilterPriorityGoals(); return priorityGoals.ToList(); } }
     public List<MainGoal> MainGoals { get { FilterMainGoals(); return mainGoals.ToList(); } }
     public Agent Master { get { return master; } set { master = value; } }
@@ -268,7 +246,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
         visibilityArea = GetAgent().visibilityArea;
         attackRange = GetAgent().attackRange;
         evasion = GetAgent().evasion;
-        subSpawns = new List<SubSpawn>(GetAgent().subspawns.ToList().Select(ssSO => new SubSpawn(ssSO)).ToList());
 
         if (affectingStatuses == null)
             affectingStatuses = new List<StatusAffector>();
@@ -282,11 +259,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
             case AgentGoalEnum.CORESTRUCTURES:
                 MapManager.instance.PlayerMainEntities.ForEach(pme => AddMainGoal(pme.GetComponent<Agent>()));
 
-                break;
-            case AgentGoalEnum.FLAG://Agents subspawned by structure Agents
-                AddMainGoal(Master);
-                break;
-            case AgentGoalEnum.MASTER://Agents subspawned by creature agents
                 break;
             case AgentGoalEnum.DEFEND://Structures
                 break;
@@ -407,18 +379,8 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public void AddAffectingStatus(StatusAffector sa) => affectingStatuses.Add(sa);
     public void RemoveAffectingStatus(StatusAffector sa) => affectingStatuses.Remove(sa);
     public abstract AgentSO GetAgent();
-    public void OnInsertSubSpawnPoolableAgent(Poolable agent)
-    {
-        SubSpawns.ForEach(ss => {
-            if (ss.spawnedAgents.Any(sa => sa == agent.gameObject))
-                ss.spawnedAgents.Remove(agent.gameObject);
-        });
-    }
     public void PoolAgent()
     {
-        if (Master != null)
-            Master.OnInsertSubSpawnPoolableAgent(GetComponent<Poolable>());
-
         Poolable.TryPool(gameObject);
     }
     public virtual void HandleDeath()
@@ -595,9 +557,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
     public virtual void PoolInsertionAction(Poolable poolable)
     {
         GetComponent<AgentUI>().TryPool();
-        
-        subSpawns.ForEach(ss => ss.spawnedAgents.ForEach(sa => Poolable.TryPool(sa)));
-        subSpawns.Clear();
 
         if (GetComponent<AIPath>() != null)
             GetComponent<AIPath>().enabled = false;

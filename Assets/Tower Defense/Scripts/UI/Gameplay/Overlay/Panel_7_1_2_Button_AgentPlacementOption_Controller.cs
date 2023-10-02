@@ -25,8 +25,6 @@ public class Panel_7_1_2_Button_AgentPlacementOption_Controller : MonoBehaviour
     public BetterText attackRange;
     [Required]
     public BetterText visibilityRange;
-    [Required]
-    public BetterText subspawnsQuantity;
     // Public (Variables) [END]
 
     // Private (Variables) [START]
@@ -62,12 +60,6 @@ public class Panel_7_1_2_Button_AgentPlacementOption_Controller : MonoBehaviour
         attackSpeed.text = playableAgentSO.agent.attackVelocity.ToString();
         attackRange.text = playableAgentSO.agent.attackRange.ToString();
         visibilityRange.text = playableAgentSO.agent.visibilityArea.ToString();
-
-        int subspawnsCount = 0;
-        if (playableAgentSO.agent.subspawns != null)
-            subspawnsCount = playableAgentSO.agent.subspawns.Count;
-
-        subspawnsQuantity.text = subspawnsCount.ToString();
     }
     // Private (Methods) [END]
 

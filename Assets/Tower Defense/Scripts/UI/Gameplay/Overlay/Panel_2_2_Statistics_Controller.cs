@@ -34,9 +34,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
     [FoldoutGroup("Quantitative UI Information")]
     [Required]
     public BetterText evasionText;
-    [FoldoutGroup("Quantitative UI Information")]
-    [Required]
-    public BetterText spawnQuantityText;
     [FoldoutGroup("UI Items")]
     [Required]
     public GameObject healthItem;
@@ -59,8 +56,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
     [Required]
     public GameObject evasionItem;
     [FoldoutGroup("UI Items")]
-    [Required]
-    public GameObject spawnQuantityItem;
     // Public (Variables) [END]
 
 
@@ -96,8 +91,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
             visibilityText.text = agt.VisibilityArea.ToString("0.#");
 
             evasionText.text = agt.Evasion.ToString();
-
-            spawnQuantityText.text = agt.GetAgent().subspawns.Aggregate(0, (int acc, SubSpawnSO value) => acc += value.maxAlive, result => result.ToString());
         }
     }
     private void HandleStatisticsVisibility()
@@ -119,7 +112,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
                     velocityItem.SetActive(true);
                     visibilityItem.SetActive(true);
                     evasionItem.SetActive(true);
-                    spawnQuantityItem.SetActive(agt.SubSpawns.Count > 0);
                     break;
                 case AgentTypeEnum.STRUCTURE:
                     healthItem.SetActive(true);
@@ -130,7 +122,6 @@ public class Panel_2_2_Statistics_Controller : MonoBehaviour
                     velocityItem.SetActive(false);
                     visibilityItem.SetActive(true);
                     evasionItem.SetActive(false);
-                    spawnQuantityItem.SetActive(agt.SubSpawns.Count > 0);
                     break;
             }
         }

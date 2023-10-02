@@ -65,11 +65,6 @@ public class CursorController : Singleton<CursorController>
         {
             switch (CursorManager.instance.Mode)
             {
-                case CursorModeEnum.CASTING_FLAG:
-                    didFilter = true;
-
-                    HandleCursorFlagMode();
-                    break;
                 case CursorModeEnum.CASTING_AIM:
                     didFilter = true;
 
@@ -98,20 +93,6 @@ public class CursorController : Singleton<CursorController>
             PlayerCommandsManager.instance.Command = PlayerCommandEnum.IDLE;
             CursorManager.instance.Mode = CursorModeEnum.IDLE;
             CursorManager.instance.aimCasting.Occurred(SelectionManager.instance.SelectedAgents.FirstOrDefault().gameObject);
-        }
-    }
-    private void HandleCursorFlagMode()
-    {
-        if (Input.GetMouseButton(0))
-            ChangeSelectedCursor(CursorTypeEnum.FLAG_02);
-        else
-            ChangeSelectedCursor(CursorTypeEnum.FLAG_01);
-
-        if (Input.GetMouseButtonUp(0) && !OverlayInterfaceManager.instance.IsOverUI() && !DidHitForbiddenArea())
-        {
-            PlayerCommandsManager.instance.Command = PlayerCommandEnum.IDLE;
-            CursorManager.instance.Mode = CursorModeEnum.IDLE;
-            CursorManager.instance.flagPositioning.Occurred(SelectionManager.instance.SelectedAgents.FirstOrDefault().gameObject);
         }
     }
     private void HandleCursorConstructionMode()

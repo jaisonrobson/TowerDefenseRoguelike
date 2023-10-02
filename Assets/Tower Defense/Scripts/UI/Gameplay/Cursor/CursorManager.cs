@@ -11,8 +11,6 @@ public class CursorManager : Singleton<CursorManager>
 {
     // Public (Variables) [START]
     [Required]
-    public ObservableEvent flagPositioning;
-    [Required]
     public ObservableEvent aimCasting;
     // Public (Variables) [END]
 

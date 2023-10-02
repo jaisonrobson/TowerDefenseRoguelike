@@ -8,8 +8,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
 {
     // Public (Variables) [START]
     [Required]
-    public GameObject flagButton;
-    [Required]
     public GameObject statisticsButton;
     [Required]
     public GameObject trashButton;
@@ -26,7 +24,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
     // Private (Methods) [START]
     private void HandleButtonsDisplay()
     {
-        bool canDisplayFlagButtton = false;
         bool canDisplayStatisticsButton = false;
         bool canDisplayThrashButton = false;
 
@@ -36,7 +33,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
 
             if (ps != null)
             {
-                canDisplayFlagButtton = true;
                 canDisplayStatisticsButton = true;
                 canDisplayThrashButton = true;
             }
@@ -47,7 +43,6 @@ public class Panel_2_1_Buttons_Display_Controller : MonoBehaviour
                 canDisplayStatisticsButton = true;
         }
 
-        flagButton.SetActive(canDisplayFlagButtton);
         statisticsButton.SetActive(canDisplayStatisticsButton);
         trashButton.SetActive(canDisplayThrashButton);
     }

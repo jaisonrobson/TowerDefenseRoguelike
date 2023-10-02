@@ -97,8 +97,6 @@ public abstract class AgentFsmAi : MonoBehaviour
             HandleAttacking();
 
             HandleDying();
-
-            HandleSubSpawning();
         }
     }
     // (Unity) Methods [END]
@@ -227,57 +225,6 @@ public abstract class AgentFsmAi : MonoBehaviour
     private void UpdateAttackAnimation(AttackSO pAttack)
     {
         Anim.SetFloat("attackSpeed", agent.CalculateAttackVelocity(pAttack));
-    }
-    private void HandleSubSpawning()
-    {
-        if (agent.SubSpawns.Count > 0 && agent.Alignment != AlignmentEnum.GENERIC)
-        {
-            if (agent.GetAgent().type == AgentTypeEnum.STRUCTURE && GetComponent<PlayableStructure>() != null)
-                if (!GetComponent<PlayableStructure>().IsPlaced)
-                    return;
-
-            bool modified = false;
-
-            SubSpawn[] subs = agent.SubSpawns.ToArray();
-            for (int subSpawnIndex = 0; subSpawnIndex < subs.Length; subSpawnIndex++)
-            {
-                if (subs[subSpawnIndex].spawnedAgents.Count < subs[subSpawnIndex].subSpawn.maxAlive)
-                {
-                    if (subs[subSpawnIndex].timeToNextSpawn <= 0f)
-                    {
-                        subs[subSpawnIndex].timeToNextSpawn = subs[subSpawnIndex].subSpawn.delay;
-                        subs[subSpawnIndex].spawnedAgents.Add(SubSpawnAgent(subs[subSpawnIndex].subSpawn.creature.prefab));
-                    }
-                    else
-                        subs[subSpawnIndex].timeToNextSpawn -= Time.deltaTime;
-
-                    modified = true;
-                }
-            }
-
-            if (modified)
-                agent.SubSpawns = subs.ToList();
-        }
-    }
-    private GameObject SubSpawnAgent(GameObject agentPrefab)
-    {
-        GameObject newAgent = Poolable.TryGetPoolable(agentPrefab, OnRetrieveSubSpawnPoolableAgent);
-
-        newAgent.gameObject.GetComponent<AIPath>().Teleport(agent.GetAgentColliderBoundsInitialPosition(newAgent.transform));
-
-        newAgent.gameObject.GetComponent<Agent>().DoSpawnFXs();
-
-        return newAgent;
-    }
-    private void OnRetrieveSubSpawnPoolableAgent(Poolable poolable)
-    {
-        Agent newAgent = poolable.gameObject.GetComponent<Agent>();
-        Agent master = agent;
-
-        poolable.transform.SetPositionAndRotation(master.GetAgentColliderBoundsInitialPosition(poolable.transform), transform.rotation);
-        newAgent.goal = master.GetAgent().type == AgentTypeEnum.CREATURE ? AgentGoalEnum.MASTER : AgentGoalEnum.FLAG;
-        newAgent.Alignment = master.Alignment;
-        newAgent.Master = master;
     }
     // Private (Methods) [END]
 

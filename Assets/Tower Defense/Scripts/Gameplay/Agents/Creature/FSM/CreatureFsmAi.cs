@@ -58,8 +58,6 @@ public class CreatureFsmAi : AgentFsmAi
             UpdateAIGoal();
 
             UpdateAIPathfindingMinimumDistance();
-
-            HandleSubspawnInsidePlayableArea();
         }
     }
     // (Unity) Methods [END]
@@ -91,8 +89,6 @@ public class CreatureFsmAi : AgentFsmAi
 
             if (creaturePriorityEnemies.Count > 0 && IsAggressive)
             {
-                if (IsSubspawnAndInsideAreaLimits() || !IsAgentASubspawn())
-                {
                     PriorityGoal nearestPriorityEnemy = agent.GetAgentNearestViablePriorityEnemy();
 
                     Agent enemyAgent = nearestPriorityEnemy.goal.GetComponent<Agent>();
@@ -109,12 +105,9 @@ public class CreatureFsmAi : AgentFsmAi
 
                         Vector3 destination = nearestPriorityEnemy.goal.transform.position + (-directionBetweenEnemy * ta.attack.minimumAttackDistance);
 
-                        if (IsSubspawnAndInsideAreaLimits(destination, 10f) || !IsAgentASubspawn())
-                        {
-                            isGettingDistanceFromTarget = true;
+                        isGettingDistanceFromTarget = true;
 
-                            pathfinding.destination = destination;
-                        }
+                        pathfinding.destination = destination;
                     }
                     else
                     {
@@ -125,32 +118,19 @@ public class CreatureFsmAi : AgentFsmAi
                         else
                             pathfinding.destination = nearestPriorityEnemy.goal.transform.position;
                     }
-                    return;
-                }
             }
-
-            if (agent.MainGoals.Count > 0)
+            else if (agent.MainGoals.Count > 0)
             {
                 isGettingDistanceFromTarget = false;
+                
+                Collider goalCollider = agent.MainGoals.First().goal.mainCollider;
 
-                if (IsAgentASubspawn())
+                if (goalCollider != null)
                 {
-                    PlayableStructure ps = agent.Master.GetComponent<PlayableStructure>();
-
-                    if (ps)
-                        pathfinding.destination = ps.GoalFlag.position;
+                    pathfinding.destination = GetGoalDestination(goalCollider.bounds);
                 }
                 else
-                {
-                    Collider goalCollider = agent.MainGoals.First().goal.mainCollider;
-
-                    if (goalCollider != null)
-                    {
-                        pathfinding.destination = GetGoalDestination(goalCollider.bounds);
-                    }
-                    else
-                        pathfinding.destination = agent.MainGoals.First().goal.transform.position;
-                }
+                    pathfinding.destination = agent.MainGoals.First().goal.transform.position;
             }
         }
     }
@@ -170,14 +150,11 @@ public class CreatureFsmAi : AgentFsmAi
 
         if (creaturePriorityEnemies.Count > 0 && IsAggressive)
         {
-            if (IsSubspawnAndInsideAreaLimits() || !IsAgentASubspawn())
-            {
-                PriorityGoal nearestPriorityEnemy = agent.GetAgentNearestViablePriorityEnemy();
+            PriorityGoal nearestPriorityEnemy = agent.GetAgentNearestViablePriorityEnemy();
 
-                agent.ActualGoal = nearestPriorityEnemy.goal;
+            agent.ActualGoal = nearestPriorityEnemy.goal;
 
-                return;
-            }
+            return;
         }
         
         if (agent.MainGoals.Count > 0)
@@ -192,9 +169,7 @@ public class CreatureFsmAi : AgentFsmAi
 
         if (pathfinding != null)
         {
-            if (IsAgentASubspawn() && agent.goal == AgentGoalEnum.FLAG && agent.PriorityGoals.Count <= 0)
-                pathfinding.endReachedDistance = 2f;
-            else if (isGettingDistanceFromTarget)
+            if (isGettingDistanceFromTarget)
             {
                 pathfinding.endReachedDistance = 1f;
             }
@@ -206,43 +181,6 @@ public class CreatureFsmAi : AgentFsmAi
                     pathfinding.endReachedDistance = nearestAttack.attack.maximumAttackDistance * 0.9f;
             }
         }
-    }
-    private void HandleSubspawnInsidePlayableArea()
-    {
-        if (IsAgentASubspawn())
-        {
-            if (!IsSubspawnAndInsideAreaLimits(10f))
-            {
-                agent.transform.position = agent.Master.GetComponent<PlayableStructure>().GoalFlag.position;
-
-                pathfinding.Teleport(agent.Master.GetComponent<PlayableStructure>().GoalFlag.position);
-            }
-        }
-    }
-    private bool IsAgentASubspawn() { return agent.Master != null; }
-    private bool IsSubspawnAndInsideAreaLimits(float limitOffset = 0f)
-    {
-        return IsSubspawnAndInsideAreaLimits(agent.transform.position, limitOffset);
-    }
-    private bool IsSubspawnAndInsideAreaLimits(Vector3 position, float limitOffset = 0f)
-    {
-        bool result = false;
-
-        if (IsAgentASubspawn())
-        {
-            if (Vector3.Distance(agent.Master.transform.position, position)
-                <= (
-                    (
-                        (agent.Master.GetComponentInChildren<AgentEnemyDetectionColliderManager>(true).DetectionCollider.bounds.extents.magnitude / 2)
-                        + (agent.GetComponentInChildren<AgentEnemyDetectionColliderManager>(true).DetectionCollider.bounds.extents.magnitude / 2)
-                    )
-                    + limitOffset
-                )
-               )
-                result = true;
-        }
-
-        return result;
     }
     private Vector3 GetGoalDestination(Bounds b)
     {

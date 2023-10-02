@@ -63,15 +63,7 @@ public class FSMStateCreatureIdle : FiniteStateMachine
                     stage = FSMEventEnum.EXIT;
                 }
             }
-        }
-        else if (creature.goal == AgentGoalEnum.FLAG)
-        {
-            if (creatureFSMAi.IsMovable && !pathfinding.reachedDestination && !creature.IsMovementPrevented)
-            {
-                nextState = new FSMStateCreatureWalk(anim, creature, pathfinding);
-                stage = FSMEventEnum.EXIT;
-            }
-        }
+        }        
     }
     public override void Exit()
     {
