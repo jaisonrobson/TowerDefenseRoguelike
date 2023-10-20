@@ -142,13 +142,14 @@ MonoBehaviour:
   name: Orc Warrior 02
   description: An orc unit of level two
   prefab: {fileID: 1245423106021898583, guid: c5e06c16ea4992949ac64b0b2c604a8f, type: 3}
+  visualPrefab: {fileID: 6431046828367541148, guid: 80cc27945bea8c947b3639b42fb5a3e5,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 0
   isMovable: 1
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 10
   experienceOnDie: 5
   health: 10
   damage: 6
@@ -161,5 +162,4 @@ MonoBehaviour:
   attacks:
   - {fileID: 11400000, guid: eb7c3507f6d6f04469daff4fdd7dd01a, type: 2}
   - {fileID: 11400000, guid: f34eaf47e97cbb047905a8c8d999d820, type: 2}
-  subspawns: []
   statusImmunities: []

@@ -116,13 +116,14 @@ MonoBehaviour:
   name: Orc Warrior 01
   description: An orc unit of level one.
   prefab: {fileID: 1245423106021898583, guid: 0254271c86332354b946fe3dfd0ec585, type: 3}
+  visualPrefab: {fileID: 6431046828367541148, guid: 7c5469296143fb744a1644a5c7fb464f,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 0
   isMovable: 1
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 5
   experienceOnDie: 2
   health: 6
   damage: 3
@@ -135,5 +136,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 101ed3fe9c5033a4fb1726247731e5a5, type: 2}
   attacks:
   - {fileID: 11400000, guid: eb7c3507f6d6f04469daff4fdd7dd01a, type: 2}
-  subspawns: []
   statusImmunities: []

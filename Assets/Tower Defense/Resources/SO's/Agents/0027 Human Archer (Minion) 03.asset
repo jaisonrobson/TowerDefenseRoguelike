@@ -116,13 +116,14 @@ MonoBehaviour:
   name: Archer 03
   description: A archer unit of level three.
   prefab: {fileID: 714431356106503518, guid: d7a1137ae12f4d1429413234befc64c3, type: 3}
+  visualPrefab: {fileID: 6431046828367541148, guid: 75a2bbc2453824945944e94e1bfc5b90,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 0
   isMovable: 1
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 15
   experienceOnDie: 3
   health: 20
   damage: 5
@@ -134,5 +135,4 @@ MonoBehaviour:
   evolutionTree: []
   attacks:
   - {fileID: 11400000, guid: 4cc0cdb3ba2da8a4c9d927025141b5e9, type: 2}
-  subspawns: []
   statusImmunities: []

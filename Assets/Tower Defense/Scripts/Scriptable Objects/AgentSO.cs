@@ -47,6 +47,10 @@ public class AgentSO : BaseOptionDataSO
 
     [VerticalGroup("base/tr_1/td_1/tr_2/td_2")]
     [Required]
+    public GameObject visualPrefab;
+
+    [VerticalGroup("base/tr_1/td_1/tr_2/td_2")]
+    [Required]
     public NatureSO nature;
 
     [HorizontalGroup("base/tr_1/td_1/tr_3", LabelWidth = 75)]

@@ -142,6 +142,8 @@ MonoBehaviour:
   name: Knight Tower 02
   description: A knight tower of level two.
   prefab: {fileID: 5745024236169404579, guid: 1e6ccc57dff61104c8fdf84230145db5, type: 3}
+  visualPrefab: {fileID: 1584858647188372924, guid: 3251b8ea860e4444091ee7ad14023a9e,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 1
   subtype: 0

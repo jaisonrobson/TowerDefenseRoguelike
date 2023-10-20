@@ -25,7 +25,7 @@ MonoBehaviour:
   assetPath: 
   newName: 
   name: Map_01
-  sceneName: Map_001
+  sceneName: Game
   description: The first map of the campaign
   playerAlignment: {fileID: 11400000, guid: 42320215e4f4f594995739e465c3bee5, type: 2}
   playerInitialPoints: 100

@@ -117,13 +117,14 @@ MonoBehaviour:
   name: Knight 02
   description: A knight unit of level two.
   prefab: {fileID: 1245423106021898583, guid: e3984ec68e0c1a644b39b369a2b72d9a, type: 3}
+  visualPrefab: {fileID: 6431046828367541148, guid: 13c7980474b55f84da9d1a88a52c1ed7,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 0
   isMovable: 1
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 10
   experienceOnDie: 2
   health: 20
   damage: 6
@@ -135,5 +136,4 @@ MonoBehaviour:
   evolutionTree: []
   attacks:
   - {fileID: 11400000, guid: 3bb9e59faa559ce449fe5c126db8f148, type: 2}
-  subspawns: []
   statusImmunities: []

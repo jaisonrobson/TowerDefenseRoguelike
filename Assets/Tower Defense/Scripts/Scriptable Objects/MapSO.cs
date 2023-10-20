@@ -51,7 +51,6 @@ public class MapSO : BaseOptionDataSO
     [Tooltip("The main structure agents that represents the player, if they are destroyed, the player lose.")]
     [Required]
     [ValidateInput("Validate_MustHaveElements_PlayerEntities", "Player Entities must have at least one element.")]
-    [ValidateInput("Validate_MustBeStructure_PlayerEntities", "All player entities must be of the structure type.")]
     public AgentSO[] playerEntities;
 
     [BoxGroup("Miscelanous", true)]
@@ -110,7 +109,6 @@ public class MapSO : BaseOptionDataSO
     // Validation Methods [START]
     private bool Validate_MustHaveElements_PlayableAgents() { return playableAgents.Length > 0; }
     private bool Validate_MustHaveElements_PlayerEntities() { return playerEntities.Length > 0; }
-    private bool Validate_MustBeStructure_PlayerEntities() { return playerEntities != null && playerEntities.All(pe => pe != null && pe.type == AgentTypeEnum.STRUCTURE); }
     private bool Validate_MustHaveElements_FogOneWaves() { return fogOneWaves != null && fogOneWaves.Length > 0; }
     private bool Validate_NotNull_FogOneWaves()
     {

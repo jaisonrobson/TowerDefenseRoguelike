@@ -142,13 +142,14 @@ MonoBehaviour:
   name: Knight Tower 03
   description: A knight tower of level three.
   prefab: {fileID: 5745024236169404579, guid: 13e1338553b782f43ad145714f8b42f2, type: 3}
+  visualPrefab: {fileID: 1090311061933938300, guid: e5898bbde6e34d346bcf0419fd281cf9,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 1
   subtype: 0
   isMovable: 0
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 100
   experienceOnDie: 100
   health: 75
   damage: 40
@@ -162,5 +163,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35c8ba34b230fe74ea20b5191e0ed7d8, type: 2}
   attacks:
   - {fileID: 11400000, guid: ee527f0a67e809846815e8a4fcc28fb7, type: 2}
-  subspawns: []
   statusImmunities: []

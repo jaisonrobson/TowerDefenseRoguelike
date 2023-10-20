@@ -117,13 +117,14 @@ MonoBehaviour:
   name: Knight 03
   description: A knight unit of level three.
   prefab: {fileID: 1245423106021898583, guid: e3984ec68e0c1a644b39b369a2b72d9a, type: 3}
+  visualPrefab: {fileID: 6431046828367541148, guid: 8db9369c583f83449a9c8ba2a6477691,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 0
   isMovable: 1
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 15
   experienceOnDie: 3
   health: 35
   damage: 10
@@ -135,5 +136,4 @@ MonoBehaviour:
   evolutionTree: []
   attacks:
   - {fileID: 11400000, guid: 180347a9098e8d546bfb6e6f1f85a2ce, type: 2}
-  subspawns: []
   statusImmunities: []

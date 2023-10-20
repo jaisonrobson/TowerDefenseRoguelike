@@ -116,13 +116,14 @@ MonoBehaviour:
   name: Archer 01
   description: A archer unit of level one.
   prefab: {fileID: 714431356106503518, guid: d7a1137ae12f4d1429413234befc64c3, type: 3}
+  visualPrefab: {fileID: 6431046828367541148, guid: cfc92fdfbb59f9c449a7c0bfe53c115a,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 0
   isMovable: 1
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 5
   experienceOnDie: 1
   health: 10
   damage: 2
@@ -134,5 +135,4 @@ MonoBehaviour:
   evolutionTree: []
   attacks:
   - {fileID: 11400000, guid: 4cc0cdb3ba2da8a4c9d927025141b5e9, type: 2}
-  subspawns: []
   statusImmunities: []

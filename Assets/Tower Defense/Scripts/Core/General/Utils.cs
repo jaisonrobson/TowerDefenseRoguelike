@@ -138,6 +138,17 @@ namespace Core.General
         }
 
         public static bool IsInLayerMask(int layer, LayerMask mask) => mask == (mask | (1 << layer));
+        public static void SetGameObjectAndChildrenLayers(Transform root, int layer)
+        {
+            root.gameObject.layer = layer;
+
+            var children = root.GetComponentsInChildren<Transform>(includeInactive: true);
+
+            foreach (var child in children)
+            {
+                child.gameObject.layer = layer;
+            }
+        }
     }
 }
 

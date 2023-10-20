@@ -142,13 +142,14 @@ MonoBehaviour:
   name: Knight Tower 04 01
   description: A knight tower of level four with variation one.
   prefab: {fileID: 5745024236169404579, guid: eb0130770fe2d36418b423481595855c, type: 3}
+  visualPrefab: {fileID: 4268922488346174807, guid: d5ad15625bc9cd541b74ecb9c191ed92,
+    type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 1
   subtype: 0
   isMovable: 0
   isAggressive: 1
   isPlayable: 1
-  experienceToEvolve: 0
   experienceOnDie: 150
   health: 100
   damage: 50
@@ -160,5 +161,4 @@ MonoBehaviour:
   evolutionTree: []
   attacks:
   - {fileID: 11400000, guid: ee527f0a67e809846815e8a4fcc28fb7, type: 2}
-  subspawns: []
   statusImmunities: []
