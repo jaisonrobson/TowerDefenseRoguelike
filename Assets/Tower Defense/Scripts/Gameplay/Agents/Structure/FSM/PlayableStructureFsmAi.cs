@@ -34,7 +34,7 @@ public class PlayableStructureFsmAi : StructureFsmAi
         if (IsAgentDead)
             return;
 
-        List<PriorityGoal> creaturePriorityEnemies = agent.GetAgentViablePriorityEnemies();
+        List<PriorityGoal> creaturePriorityEnemies = agent.PriorityGoals;
 
         if (creaturePriorityEnemies.Count > 0 && IsAggressive)
         {

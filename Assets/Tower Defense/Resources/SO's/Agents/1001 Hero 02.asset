@@ -115,12 +115,13 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: d24bc4239349b2c4aabbf696a175b294, type: 3}
   name: Hero 02
   description: 
-  prefab: {fileID: 3802529816531641931, guid: 641b1e99766491e4fad3550b5de5241b, type: 3}
-  visualPrefab: {fileID: 8893276166118949265, guid: 5b474343e53e47d47a930390fb1fa762,
+  prefab: {fileID: 3802529816531641931, guid: 1432342ed32d4624c86226ec75ca1654, type: 3}
+  visualPrefab: {fileID: 9141095412960453296, guid: 9058167fddb161345b6c57f5ae07ce61,
     type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 1
+  structureType: 0
   isMovable: 0
   isAggressive: 1
   isPlayable: 1
@@ -133,5 +134,6 @@ MonoBehaviour:
   visibilityArea: 30
   evasion: {x: 0, y: 10}
   evolutionTree: []
-  attacks: []
+  attacks:
+  - {fileID: 11400000, guid: 89e015320e8da5744b1b2baedd009587, type: 2}
   statusImmunities: []

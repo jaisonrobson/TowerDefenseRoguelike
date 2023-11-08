@@ -85,7 +85,7 @@ public class CreatureFsmAi : AgentFsmAi
 
         if (pathfinding != null)
         {
-            List<PriorityGoal> creaturePriorityEnemies = agent.GetAgentViablePriorityEnemies();
+            List<PriorityGoal> creaturePriorityEnemies = agent.PriorityGoals;
 
             if (creaturePriorityEnemies.Count > 0 && IsAggressive)
             {
@@ -146,7 +146,7 @@ public class CreatureFsmAi : AgentFsmAi
             return;
         }
 
-        List<PriorityGoal> creaturePriorityEnemies = agent.GetAgentViablePriorityEnemies();
+        List<PriorityGoal> creaturePriorityEnemies = agent.PriorityGoals;
 
         if (creaturePriorityEnemies.Count > 0 && IsAggressive)
         {

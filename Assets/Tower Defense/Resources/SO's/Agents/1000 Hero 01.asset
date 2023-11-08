@@ -116,11 +116,12 @@ MonoBehaviour:
   name: Hero 01
   description: 
   prefab: {fileID: 3802529816531641931, guid: 641b1e99766491e4fad3550b5de5241b, type: 3}
-  visualPrefab: {fileID: 8893276166118949265, guid: c0ee97e2fcbc3b74d9526c977d6dc7a5,
+  visualPrefab: {fileID: 9141095412960453296, guid: a0bec2c0bb546a54493d6e377d159ae0,
     type: 3}
   nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
   type: 0
   subtype: 1
+  structureType: 0
   isMovable: 0
   isAggressive: 1
   isPlayable: 1

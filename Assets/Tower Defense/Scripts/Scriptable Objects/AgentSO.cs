@@ -66,6 +66,10 @@ public class AgentSO : BaseOptionDataSO
     public AgentSubTypeEnum subtype = AgentSubTypeEnum.NONE;
 
     [VerticalGroup("base/tr_1/td_1/tr_3/td_1")]
+    [GUIColor(1f, 0.8f, 0.4f, 1f)]
+    public StructureTypeEnum structureType;
+
+    [VerticalGroup("base/tr_1/td_1/tr_3/td_1")]
     [ToggleButtons("MOVABLE", "FIXED", trueColor: "@new Color(0.51f, 1f, 0.65f, 1f)", falseColor: "@new Color(1f, 0.56f, 0.51f, 1f)")]
     [OnValueChanged("Update_NotMovableStructures")]
     [ValidateInput("Validate_NotMovable_Structures", "Structures cannot move.")]

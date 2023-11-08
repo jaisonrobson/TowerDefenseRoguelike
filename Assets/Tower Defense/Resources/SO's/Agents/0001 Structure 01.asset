@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fff13a6f60a7843a122807e03dd0b8, type: 3}
+  m_Name: 0001 Structure 01
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 811a97b5816c6974fb07bd104a8e5dec, type: 2}
+    - {fileID: 11400000, guid: a0d9316b50f7c74478d1f8f93622433e, type: 2}
+    - {fileID: 11400000, guid: 146e5549401b4ab48a1b79fb4e44968e, type: 2}
+    - {fileID: 11400000, guid: f05d7136298c18542890dcbc5f09e4e6, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: animations
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[AnimationSO,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: spawn
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: death
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sounds
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SoundSO,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: spawn
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: death
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  jokerHiddenTitleField: 
+  assetPath: Assets/Tower Defense/Resources/SO's/Agents/0001 Human Knight (Tower)
+    01.asset
+  newName: 0001 Structure 01
+  image: {fileID: 3286163911610860551, guid: 6e30c0fbe42c12d4eac62650cf47320c, type: 3}
+  name: Structure 01
+  description: A knight tower of level one.
+  prefab: {fileID: 5745024236169404579, guid: 831ae62a34a8f3e43bc5d4e14ccdc08f, type: 3}
+  visualPrefab: {fileID: 7396899851553650576, guid: 302ba2a71c3676f4c8cbc00c563a4275,
+    type: 3}
+  nature: {fileID: 11400000, guid: efc48cd36c929314495d893e09975cdd, type: 2}
+  type: 1
+  subtype: 0
+  structureType: 1
+  isMovable: 0
+  isAggressive: 1
+  isPlayable: 1
+  experienceOnDie: 15
+  health: 25
+  damage: 15
+  attackVelocity: 3
+  attackRange: 35
+  velocity: 3
+  visibilityArea: 35
+  evasion: {x: 0, y: 10}
+  evolutionTree: []
+  attacks:
+  - {fileID: 11400000, guid: ee527f0a67e809846815e8a4fcc28fb7, type: 2}
+  statusImmunities: []

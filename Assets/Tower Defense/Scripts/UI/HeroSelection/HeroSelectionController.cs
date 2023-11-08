@@ -37,13 +37,14 @@ public class HeroSelectionController : Singleton<HeroSelectionController>
         heroVisualInstance = Instantiate(selectedHero.visualPrefab);
         heroVisualInstance.transform.SetParent(heroObjectParent);
         heroVisualInstance.transform.localPosition = Vector3.zero;
+        heroVisualInstance.transform.localScale = Vector3.one;
         Utils.SetGameObjectAndChildrenLayers(heroVisualInstance.transform, LayerMask.NameToLayer("UI"));
     }
     private void HandleHeroVisualInstanceRotation()
     {
         if (heroVisualInstance != null)
         {
-            heroVisualInstance.transform.Rotate(Vector3.up * Time.deltaTime * 2f);
+            heroVisualInstance.transform.Rotate(Vector3.up * Time.deltaTime * 5f);
         }
     }
     // Private (Methods) [END]
@@ -54,6 +55,8 @@ public class HeroSelectionController : Singleton<HeroSelectionController>
         selectedHero = hero;
 
         HandleHeroInstantiating();
+
+        CreateButtons_HeroSelection.instance.SelectHero(hero);
 
         PlayerPrefs.SetString("selectedHero", hero.name);
 

@@ -28,14 +28,12 @@ public static class Animating
             return;
 
         GameObject newAnimationPoolable = Poolable.TryGetPoolable(
-            pAnimSO.prefab
-            /*,
+            pAnimSO.prefab,
             newPoolable =>
             {
                 newPoolable.transform.position = pObjectToFollow.transform.position;
                 newPoolable.transform.rotation = pObjectToFollow.transform.rotation;
             }
-            */
         );
 
         newAnimationPoolable.GetComponent<AnimationFX>().StartAnimation(pAnimSO, pDuration, pObjectToFollow, true);

@@ -224,7 +224,8 @@ public abstract class AgentFsmAi : MonoBehaviour
     }
     private void UpdateAttackAnimation(AttackSO pAttack)
     {
-        Anim.SetFloat("attackSpeed", agent.CalculateAttackVelocity(pAttack));
+        if (Anim != null)
+            Anim.SetFloat("attackSpeed", agent.CalculateAttackVelocity(pAttack));
     }
     // Private (Methods) [END]
 

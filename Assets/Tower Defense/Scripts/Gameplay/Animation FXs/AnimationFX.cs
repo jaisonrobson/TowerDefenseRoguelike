@@ -138,13 +138,19 @@ public class AnimationFX : MonoBehaviour, IPoolable
     }
     private void HandleTrailAnimationObjectFollowing()
     {
-        if (isTrailAnimation)
+        if (isTrailAnimation && !isTryingToPool)
         {
             if (ObjectToFollow != null && ObjectToFollow.activeSelf && ObjectToFollow.activeInHierarchy && rac != null && !rac.IsRangedAttackDurationEnded)
             {
                 transform.position = ObjectToFollow.transform.position;
             }
-            else if (ObjectToFollow != null && (!ObjectToFollow.activeSelf || !ObjectToFollow.activeInHierarchy || (rac != null && rac.IsRangedAttackDurationEnded)) && !isTryingToPool)
+            else if (ObjectToFollow != null && !isTryingToPool && (!ObjectToFollow.activeSelf || !ObjectToFollow.activeInHierarchy || (rac != null && rac.IsRangedAttackDurationEnded)))
+            {
+                isTryingToPool = true;
+
+                Invoke(nameof(DelayedPool), 1f);
+            }
+            else if (ObjectToFollow == null && !isTryingToPool)
             {
                 isTryingToPool = true;
 
@@ -170,12 +176,16 @@ public class AnimationFX : MonoBehaviour, IPoolable
         rac = pObjectToFollow?.GetComponent<RangedAttackController>();
         isTrailAnimation = pIsTrailAnimation;
 
+        if (ObjectToFollow != null)
+            transform.position = ObjectToFollow.transform.position;
+
         UpdateParticleSystems();
 
         isRunning = true;
     }
     public virtual void PoolRetrievalAction(Poolable poolable)
     {
+        ResetVariables();
     }
     public virtual void PoolInsertionAction(Poolable poolable)
     {

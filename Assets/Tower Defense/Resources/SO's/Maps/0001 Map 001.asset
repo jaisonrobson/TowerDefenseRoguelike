@@ -31,13 +31,13 @@ MonoBehaviour:
   playerInitialPoints: 100
   playableAgents:
   - {fileID: 11400000, guid: 5ee3415883f95844a86bbd74306d8aa8, type: 2}
-  - {fileID: 11400000, guid: 70a9899fa8622bd4e957eb46d9e5ba63, type: 2}
-  playerEntities:
-  - {fileID: 11400000, guid: 5fcc1f3f6c2f3374eb7a8482bf234475, type: 2}
   fogOneWaves:
   - {fileID: 11400000, guid: f0a14f4a8b3823e4ba42f5e620942c80, type: 2}
   fogTwoWaves:
   - {fileID: 11400000, guid: f0a14f4a8b3823e4ba42f5e620942c80, type: 2}
+  - {fileID: 11400000, guid: 4e2c305a491d0a242a43a2bf3f220424, type: 2}
+  - {fileID: 11400000, guid: aeff8f6f73261b2479081f0d95d5183a, type: 2}
+  - {fileID: 11400000, guid: aeff8f6f73261b2479081f0d95d5183a, type: 2}
   fogThreeWaves:
   - {fileID: 11400000, guid: f0a14f4a8b3823e4ba42f5e620942c80, type: 2}
   alignmentsOpponents:

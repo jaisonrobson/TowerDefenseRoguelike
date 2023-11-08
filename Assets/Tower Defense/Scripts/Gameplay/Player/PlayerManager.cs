@@ -58,7 +58,7 @@ public class PlayerManager : Singleton<PlayerManager>
     }
     private void HandlePlayerAliveUpdate()
     {
-        if (!MapManager.instance.IsAnyPlayerMainEntityAlive)
+        if (!MapManager.instance.IsHeroAlive)
             isPlayerAlive = false;
     }
     // Private (Methods) [END]

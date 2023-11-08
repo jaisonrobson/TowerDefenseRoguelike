@@ -14,7 +14,6 @@ using DestroyIt;
 
 public struct PriorityGoal
 {
-    public bool ignoreBattle;
     public int destination;
     public Agent goal;
 }
@@ -257,7 +256,7 @@ public abstract class Agent : MonoBehaviour, IPoolable
         switch (goal)
         {
             case AgentGoalEnum.CORESTRUCTURES:
-                MapManager.instance.PlayerMainEntities.ForEach(pme => AddMainGoal(pme.GetComponent<Agent>()));
+                AddMainGoal(MapManager.instance.hero.GetComponent<Agent>());
 
                 break;
             case AgentGoalEnum.DEFEND://Structures
@@ -403,11 +402,10 @@ public abstract class Agent : MonoBehaviour, IPoolable
         );
     public AttackOrigin GetAttackOriginOfAttack(AttackSO pAttack) => attacksOrigins.Where(ao => ao.attack == pAttack).First();
     public AttackOrigin GetAnimationOriginOfAttack(AttackSO pAttack) => attacksOrigins.Where(ao => ao.attack == pAttack).First();
-    public List<PriorityGoal> GetAgentViablePriorityEnemies() { return PriorityGoals.Where(pg => pg.ignoreBattle == false).ToList(); }
     public PriorityGoal GetAgentNearestViablePriorityEnemy() {
         float lastDistance = float.PositiveInfinity;
 
-        List<PriorityGoal> viablePriorities = GetAgentViablePriorityEnemies();
+        List<PriorityGoal> viablePriorities = PriorityGoals;
 
         return viablePriorities.Aggregate(
             viablePriorities.First(),
@@ -432,7 +430,6 @@ public abstract class Agent : MonoBehaviour, IPoolable
         PriorityGoal newPriorityGoal;
         newPriorityGoal.goal = goal;
         newPriorityGoal.destination = GenerateRandomDestination();
-        newPriorityGoal.ignoreBattle = GetAgent().isPlayable && TryToEvade();
 
         priorityGoals = priorityGoals.Concat(new[] { newPriorityGoal }).ToArray();
     }

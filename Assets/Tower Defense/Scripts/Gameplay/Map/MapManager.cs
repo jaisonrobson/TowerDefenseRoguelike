@@ -7,27 +7,6 @@ using Core.Patterns;
 using System.Linq;
 using Core.General;
 
-[Serializable]
-public struct MapEntityHook
-{
-    [Required]
-    public Transform hook;
-    [ValidateInput("Validate_MustBeValid_AgentSubtype", "The agent subtype must not be NONE.")]
-    public AgentSubTypeEnum type;
-    public bool getMainPlayerAlignment;
-    [ValidateInput("Validate_MustBeValid_Alignment", "The alignment must not be GENERIC.")]
-    public AlignmentEnum alignment;
-    public int priority;
-    [HideInEditorMode]
-    [ReadOnly]
-    public GameObject spawnedEntity;
-
-    // (Validation) Methods [START]
-    private bool Validate_MustBeValid_AgentSubtype() { return type != AgentSubTypeEnum.NONE; }
-    private bool Validate_MustBeValid_Alignment() { return getMainPlayerAlignment || alignment != AlignmentEnum.GENERIC; }
-    // (Validation) Methods [END]
-}
-
 [HideMonoScript]
 public class MapManager : Singleton<MapManager>
 {
@@ -35,15 +14,14 @@ public class MapManager : Singleton<MapManager>
     public MapSO map;
 
     [PropertySpace(5f)]
-    [Title("Map Structures")]
-    [ValidateInput("Validate_MustHaveElements_MapEntityHooks", "Map Entity Hooks must have at least one valid element.")]
-    public List<MapEntityHook> mapEntityHooks;
-
+    [HideInEditorMode]
+    public GameObject hero;
+    [Required]
+    public Transform heroHook;
     // Public (Variables) [END]
 
     // Public (Properties) [START]
-    public bool IsAnyPlayerMainEntityAlive{ get { return mapEntityHooks.Any(meh => meh.alignment == map.playerAlignment.alignment && IsStructureAlive(meh.spawnedEntity)); } }
-    public List<GameObject> PlayerMainEntities { get { return mapEntityHooks.Where(meh => meh.alignment == map.playerAlignment.alignment).OrderBy(meh => meh.priority).Select(meh => meh.spawnedEntity).ToList(); } }
+    public bool IsHeroAlive{ get { return IsStructureAlive(hero); } }
     public int PlayerInitialPointsQuantity { get { return map.playerInitialPoints; } }
     // Public (Properties) [END]
 
@@ -51,7 +29,7 @@ public class MapManager : Singleton<MapManager>
     void OnEnable()
     {
         InitializeMap();
-        InitializeStructures();
+        InitializeHero();
     }
     // Unity Methods [END]
 
@@ -77,29 +55,15 @@ public class MapManager : Singleton<MapManager>
             Debug.LogError("[MapManager] Selected map was not found");
         }
     }
-    private void InitializeStructures()
+    private void InitializeHero()
     {
-        mapEntityHooks = Utils.UpdateValueInStructList(mapEntityHooks, meh => {
-            meh.alignment = meh.getMainPlayerAlignment ? map.playerAlignment.alignment : meh.alignment;
-            meh.spawnedEntity = Poolable.TryGetPoolable(GetMapEntity(meh));
-            meh.spawnedEntity.transform.SetPositionAndRotation(meh.hook.position, meh.hook.rotation);
+        string heroName = PlayerPrefs.GetString("selectedHero");
 
-            return meh;
-        }).ToList();
-    }
-    private GameObject GetMapEntity(MapEntityHook pMeh)
-    {
-        GameObject result = null;
+        AgentSO heroSO = Resources.LoadAll<AgentSO>("SO's/Agents").ToList().Where(agt => agt.subtype == AgentSubTypeEnum.HERO && agt.name == heroName).ToList().First();
 
-        if (pMeh.alignment == map.playerAlignment.alignment)
-        {
-            map.playerEntities.ToList().ForEach(pe => {
-                if (pe.subtype == pMeh.type)
-                    result = pe.prefab;
-            });
-        }
-
-        return result;
+        hero = Poolable.TryGetPoolable(heroSO.prefab);
+        hero.GetComponent<Agent>().Alignment = map.playerAlignment.alignment;
+        hero.transform.SetPositionAndRotation(heroHook.position, heroHook.rotation);
     }
     // Private Methods [END]
 
@@ -110,10 +74,6 @@ public class MapManager : Singleton<MapManager>
     }
     public bool IsStructureAlive(GameObject pStructure) => pStructure.activeInHierarchy && pStructure.activeSelf;
     // Public Methods [END]
-
-    // (Validation) Methods [START]
-    private bool Validate_MustHaveElements_MapEntityHooks() { return mapEntityHooks != null && mapEntityHooks.Count > 0; }
-    // (Validation) Methods [END]
 }
 
 ////////////////////////////////////////////////////////////////////////////////

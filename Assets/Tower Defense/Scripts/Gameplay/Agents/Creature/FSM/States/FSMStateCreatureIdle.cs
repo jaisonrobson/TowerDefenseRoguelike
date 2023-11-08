@@ -75,7 +75,6 @@ public class FSMStateCreatureIdle : FiniteStateMachine
     private bool DidCreatureFoundEnemies() {
         return (
             creature.PriorityGoals.Count > 0
-            && creature.PriorityGoals.Any(pg => pg.ignoreBattle == false)
             || (creature.MainGoals.Count > 0 && creature.goal == AgentGoalEnum.CORESTRUCTURES)
         );
     }

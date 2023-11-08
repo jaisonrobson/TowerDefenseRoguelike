@@ -25,7 +25,6 @@ public class FSMStatePlayableStructure : FiniteStateMachine
     {
         return (
             playableStructure.PriorityGoals.Count > 0
-            && playableStructure.PriorityGoals.Any(pg => pg.ignoreBattle == false)
             || (playableStructure.MainGoals.Count > 0 && playableStructure.goal == AgentGoalEnum.CORESTRUCTURES)
         );
     }

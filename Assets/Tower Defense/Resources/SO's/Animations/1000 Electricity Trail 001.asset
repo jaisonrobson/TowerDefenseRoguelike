@@ -20,11 +20,27 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: animationSize
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
   jokerHiddenTitleField: 
   assetPath: 
   newName: 
   prefab: {fileID: 6055223970077216051, guid: 7870774cce40b844ca209abb1aebcbd3, type: 3}
-  delay: 0.25
+  animationSize: {x: 0, y: 0, z: 0}
+  delay: 0
   delayBeforeChainedAnimation: 0
   chainedAnimation: {fileID: 0}
